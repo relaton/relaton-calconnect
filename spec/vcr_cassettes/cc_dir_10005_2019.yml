@@ -1,0 +1,172 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://127.0.0.1:4000/relaton/xml/cc-dir-10005-2019.rxl
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Etag:
+      - 20300df53-4f5-5db9784f
+      Content-Type:
+      - application/octet-stream; charset=utf-8
+      Content-Length:
+      - '1269'
+      Last-Modified:
+      - Wed, 30 Oct 2019 11:47:27 GMT
+      Cache-Control:
+      - private, max-age=0, proxy-revalidate, no-store, no-cache, must-revalidate
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.4.0/2016-12-24)
+      Date:
+      - Wed, 30 Oct 2019 12:27:20 GMT
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: |-
+        <bibdata type="directive">
+          <title format="text/plain" language="en">Guidelines for the implementation of the CalConnect patent policy</title>
+          <uri type="xml">csd/cc-10005.xml</uri>
+          <uri type="pdf">csd/cc-10005.pdf</uri>
+          <uri type="doc">csd/cc-10005.doc</uri>
+          <uri type="html">csd/cc-10005.html</uri>
+          <uri type="rxl">csd/cc-10005.rxl</uri>
+          <docidentifier type="CC">CC/DIR 10005:2019</docidentifier>
+          <docnumber>10005</docnumber>
+          <date type="published">
+            <on>2019-01-01</on>
+          </date>
+          <contributor>
+            <role type="author"/>
+            <organization>
+              <name>CalConnect</name>
+            </organization>
+          </contributor>
+          <contributor>
+            <role type="publisher"/>
+            <organization>
+              <name>CalConnect</name>
+            </organization>
+          </contributor>
+          <edition>1</edition>
+          <version>
+            <revision-date>2019-06-05</revision-date>
+          </version>
+          <language>en</language>
+          <script>Latn</script>
+          <status>
+            <stage>published</stage>
+          </status>
+          <copyright>
+            <from>2019</from>
+            <owner>
+              <organization>
+                <name>CalConnect</name>
+              </organization>
+            </owner>
+          </copyright>
+          <ext>
+            <doctype>directive</doctype>
+            <editorialgroup>
+              <technical-committee>PUBLISH</technical-committee>
+            </editorialgroup>
+          </ext>
+        </bibdata>
+    http_version: 
+  recorded_at: Wed, 30 Oct 2019 12:27:20 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:4000/csd/cc-10005.rxl
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Etag:
+      - 20300ddca-420-5db96470
+      Content-Type:
+      - application/octet-stream; charset=utf-8
+      Content-Length:
+      - '1056'
+      Last-Modified:
+      - Wed, 30 Oct 2019 10:22:40 GMT
+      Cache-Control:
+      - private, max-age=0, proxy-revalidate, no-store, no-cache, must-revalidate
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.4.0/2016-12-24)
+      Date:
+      - Wed, 30 Oct 2019 12:27:20 GMT
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: |-
+        <bibdata type="directive">
+          <title format="text/plain" language="en">Guidelines for the implementation of the CalConnect patent policy</title>
+          <docidentifier type="CC">CC/DIR 10005:2019</docidentifier>
+          <docnumber>10005</docnumber>
+          <date type="published">
+            <on>2019</on>
+          </date>
+          <contributor>
+            <role type="author"/>
+            <organization>
+              <name>CalConnect</name>
+            </organization>
+          </contributor>
+          <contributor>
+            <role type="publisher"/>
+            <organization>
+              <name>CalConnect</name>
+            </organization>
+          </contributor>
+          <edition>1</edition>
+          <version>
+            <revision-date>2019-06-05</revision-date>
+          </version>
+          <language>en</language>
+          <script>Latn</script>
+          <status>
+            <stage>published</stage>
+          </status>
+          <copyright>
+            <from>2019</from>
+            <owner>
+              <organization>
+                <name>CalConnect</name>
+              </organization>
+            </owner>
+          </copyright>
+          <ext>
+            <doctype>directive</doctype>
+            <editorialgroup>
+              <technical-committee>PUBLISH</technical-committee>
+            </editorialgroup>
+          </ext>
+        </bibdata>
+    http_version: 
+  recorded_at: Wed, 30 Oct 2019 12:27:20 GMT
+recorded_with: VCR 5.0.0
