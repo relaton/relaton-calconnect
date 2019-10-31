@@ -1,0 +1,123 @@
+= RelatonCalconnect
+
+RelatonCalconnect is a Ruby gem that implements the https://github.com/metanorma/metanorma-model-iso#iso-bibliographic-item[IsoBibliographicItem model].
+
+You can use it to retrieve metadata of Calconnect Standards from https://standards.calconnect.org, and access such metadata through the `CcBibliographicItem` object.
+
+== Installation
+
+Add this line to your application's Gemfile:
+
+[source,ruby]
+----
+gem 'relaton-calconnect'
+----
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install relaton-calconnect
+
+== Usage
+
+=== Search for a standard using keywords
+
+[source,ruby]
+----
+require 'relaton_calconnect'
+
+hits = RelatonCalconnect::CcBibliography.search("CC/DIR 10005:2019")
+=> [<RelatonCalconnect::Hit:0x007f9a765185c0 @text="CC/DIR 10005:2019" @fetched="false" @fullIdentifier="" @title="">]
+
+item = hits[0].fetch
+=> #<RelatonCalconnect::CcBibliographicItem:0x007f9a766b15d0
+...
+----
+
+=== XML serialization
+
+[source,ruby]
+----
+item.to_xml
+=> "<bibitem id=CC/DIR10005-2019 type=directive>
+      <title format=text/plain language=en>Guidelines for the implementation of the CalConnect patent policy</title>
+      <uri type=xml>csd/cc-10005.xml</uri>
+      <uri type=pdf>csd/cc-10005.pdf</uri>
+      <uri type=doc>csd/cc-10005.doc</uri>
+      <uri type=html>csd/cc-10005.html</uri>
+      <uri type=rxl>csd/cc-10005.rxl</uri>
+      <docidentifier type=CC>CC/DIR 10005:2019</docidentifier>
+      ...
+    </bibitem>
+----
+With argument `bibdata: true` it ouputs XML wrapped by `bibdata` element and adds flavour `ext` element.
+[source,ruby]
+----
+item.to_xml bibdata: true
+=> "<bibdata type=directive>
+      <title format=text/plain language=en>Guidelines for the implementation of the CalConnect patent policy</title>
+      <uri type=xml>csd/cc-10005.xml</uri>
+      <uri type=pdf>csd/cc-10005.pdf</uri>
+      <uri type=doc>csd/cc-10005.doc</uri>
+      <uri type=html>csd/cc-10005.html</uri>
+      <uri type=rxl>csd/cc-10005.rxl</uri>
+      <docidentifier type=CC>CC/DIR 10005:2019</docidentifier>
+      ...
+      <ext>
+        <doctype>directive</doctype>
+        <editorialgroup>
+          <technical-committee>PUBLISH</technical-committee>
+        </editorialgroup>
+      </ext>
+    </bibdata>"
+----
+
+=== Get code, and year
+[source,ruby]
+----
+RelatonCalconnect::CcBibliography.get "CC/DIR 10005", "2019", {}
+fetching CC/DIR 10005...
+=> #<RelatonCalconnect::CcBibliographicItem:0x007f9a73dfa290
+...
+----
+
+=== Create bibliographic item from XML
+[source,ruby]
+----
+RelatonCalconnect::XMLParser.from_xml File.read('spec/fixtures/cc_dir_10005_2019.xml')
+=> #<RelatonCalconnect::CcBibliographicItem:0x007f9a7423dde8
+...
+----
+
+=== Create bibliographic item from YAML
+[source,ruby]
+----
+hash = YAML.load_file 'spec/fixtures/cc_dir_10005_2019.yml'
+=> {"id"=>"CC/DIR10005-2019",
+...
+
+bib_hash = RelatonCalconnect::HashConverter.hash_to_bib hash
+=> {:id=>"CC/DIR10005-2019",
+...
+
+RelatonCalconnect::CcBibliographicItem.new bib_hash
+=> #<RelatonCalconnect::CcBibliographicItem:0x007fc5a0109f88
+...
+----
+
+== Development
+
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+
+To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+
+== Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/calconnect/relaton_calconnect.
+
+== License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).

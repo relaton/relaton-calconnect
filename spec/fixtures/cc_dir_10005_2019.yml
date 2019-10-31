@@ -1,0 +1,54 @@
+---
+id: CC/DIR10005-2019
+fetched: "2019-10-31"
+title:
+- type: title-main
+  content: Guidelines for the implementation of the CalConnect patent policy
+  language: en
+  format: text/plain
+- type: main
+  content: Guidelines for the implementation of the CalConnect patent policy
+  language: en
+  format: text/plain
+link:
+- type: xml
+  content: csd/cc-10005.xml
+- type: pdf
+  content: csd/cc-10005.pdf
+- type: doc
+  content: csd/cc-10005.doc
+- type: html
+  content: csd/cc-10005.html
+- type: rxl
+  content: csd/cc-10005.rxl
+type: directive
+docid:
+  id: CC/DIR 10005:2019
+  type: CC
+docnumber: '10005'
+date:
+  type: published
+  value: '2019-01-01'
+contributor:
+- organization:
+    name: CalConnect
+  role: author
+- organization:
+    name: CalConnect
+  role: publisher
+edition: '1'
+version:
+  revision_date: '2019-06-05'
+revdate: '2019-06-05'
+language: en
+script: Latn
+docstatus:
+  stage: published
+copyright:
+  owner:
+    name: CalConnect
+  from: '2019'
+editorialgroup:
+  technical_committee:
+    name: PUBLISH
+doctype: directive
