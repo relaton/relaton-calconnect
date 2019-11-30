@@ -31,7 +31,7 @@ module RelatonCalconnect
     # @param docid [String]
     def from_yaml(docid, **_opts)
       data["root"]["items"].select do |doc|
-        doc["docid"]["id"].include?(docid)
+        doc["docid"] && doc["docid"]["id"].include?(docid)
       end.map { |h| Hit.new(h, self) }
     end
 
