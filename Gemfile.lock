@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    relaton-calconnect (0.1.1)
+    relaton-calconnect (0.1.2)
       faraday
       relaton-iso-bib (~> 0.3.0)
 
