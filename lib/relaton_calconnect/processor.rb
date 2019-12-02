@@ -7,7 +7,7 @@ module RelatonCalconnect
     def initialize
       @short = :relaton_calconnect
       @prefix = "CC"
-      @defaultprefix = %r{^(CC)[ /]}
+      @defaultprefix = %r{^CC\s}
       @idtype = "CC"
     end
 
