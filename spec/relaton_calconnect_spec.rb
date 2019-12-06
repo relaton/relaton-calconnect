@@ -1,6 +1,14 @@
+require "jing"
+
 RSpec.describe RelatonCalconnect do
   it "has a version number" do
     expect(RelatonCalconnect::VERSION).not_to be nil
+  end
+
+  it "returs grammar hash" do
+    hash = RelatonCalconnect.grammar_hash
+    expect(hash).to be_instance_of String
+    expect(hash.size).to eq 32
   end
 
   context "search" do
@@ -47,6 +55,9 @@ RSpec.describe RelatonCalconnect do
           xml = item.to_xml bibdata: true
           File.write file, xml, encoding: "UTF-8" unless File.exist? file
           expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+          schema = Jing.new "spec/fixtures/isobib.rng"
+          errors = schema.validate file
+          expect(errors).to eq []
         end
       end
     end
@@ -59,6 +70,9 @@ RSpec.describe RelatonCalconnect do
           xml = item.to_xml bibdata: true
           File.write file, xml, encoding: "UTF-8" unless File.exist? file
           expect(xml).to be_equivalent_to File.read file, encoding: "UTF-8"
+          schema = Jing.new "spec/fixtures/isobib.rng"
+          errors = schema.validate file
+          expect(errors).to eq []
         end
       end
     end
