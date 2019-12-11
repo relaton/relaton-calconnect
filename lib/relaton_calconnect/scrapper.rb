@@ -1,7 +1,7 @@
 module RelatonCalconnect
   module Scrapper
-    # DOMAIN = "https://standards.calconnect.org/".freeze
-    DOMAIN = "http://127.0.0.1:4000/".freeze
+    DOMAIN = "https://standards.calconnect.org/".freeze
+    # DOMAIN = "http://127.0.0.1:4000/".freeze
 
     class << self
       # papam hit [Hash]
