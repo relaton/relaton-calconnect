@@ -87,11 +87,11 @@ RSpec.describe RelatonCalconnect do
       end
     end
 
-    it "incorrect code" do
+    it "not found" do
       VCR.use_cassette "data", match_requests_on: [:path] do
         expect do
-          RelatonCalconnect::CcBibliography.get "123456"
-        end.to output(/no match found online for 123456/).to_stderr
+          RelatonCalconnect::CcBibliography.get "CC/DIR 123456"
+        end.to output(/no match found online for CC\/DIR 123456/).to_stderr
       end
     end
   end
