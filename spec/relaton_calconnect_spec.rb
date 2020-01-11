@@ -26,7 +26,7 @@ RSpec.describe RelatonCalconnect do
 
     it "raises RequestError" do
       req = double
-      expect(req).to receive(:get).and_raise Faraday::Error::ConnectionFailed.new("Connection error")
+      expect(req).to receive(:get).and_raise Faraday::ConnectionFailed.new("Connection error")
       expect(Faraday).to receive(:new).and_return req
       expect(File).to receive(:exist?).and_return(true).twice
       expect(File).to receive(:ctime).and_return Time.now - 3600 * 24

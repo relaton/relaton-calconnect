@@ -5,7 +5,7 @@ module RelatonCalconnect
       # @return [RelatonCalconnect::HitCollection]
       def search(text, year = nil, opts = {})
         HitCollection.new text, year, opts
-      rescue Faraday::Error::ConnectionFailed
+      rescue Faraday::ConnectionFailed
         raise RelatonBib::RequestError, "Could not access https://standards.calconnect.org"
       end
 
