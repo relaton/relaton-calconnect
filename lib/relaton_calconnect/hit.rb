@@ -1,8 +1,5 @@
 module RelatonCalconnect
   class Hit < RelatonBib::Hit
-    # @return [RelatonCalconnect::HitCollection]
-    attr_reader :hit_collection
-
     # Parse page.
     # @return [RelatonCalconnect::CcBliographicItem]
     def fetch

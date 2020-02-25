@@ -4,7 +4,7 @@ module RelatonCalconnect
       # @param text [String]
       # @return [RelatonCalconnect::HitCollection]
       def search(text, year = nil, opts = {})
-        HitCollection.new text, year, opts
+        HitCollection.new text, year
       rescue Faraday::ConnectionFailed
         raise RelatonBib::RequestError, "Could not access https://standards.calconnect.org"
       end

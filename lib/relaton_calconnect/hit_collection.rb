@@ -13,14 +13,11 @@ module RelatonCalconnect
     # @param ref [Strig]
     # @param year [String]
     # @param opts [Hash]
-    def initialize(ref, year = nil, _opts = {})
-      @text = ref
-      @year = year
-      @fetched = false
-      hits = from_yaml(ref).sort_by do |hit|
+    def initialize(ref, year = nil)
+      super
+      @array = from_yaml(ref).sort_by do |hit|
         hit.hit["revdate"] ? Date.parse(hit.hit["revdate"]) : Date.new
-      end
-      concat hits.reverse
+      end.reverse
     end
 
     private
