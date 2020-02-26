@@ -5,7 +5,11 @@ module RelatonCalconnect
         doc = Nokogiri::XML xml
         doc.remove_namespaces!
         cctitem = doc.at("/bibitem|/bibdata")
-        CcBibliographicItem.new(item_data(cctitem))
+        if cctitem
+          CcBibliographicItem.new(item_data(cctitem))
+        else
+          warn "[relato-calconnect] can't find bibitem or bibdata element in the XML"
+        end
       end
     end
   end
