@@ -8,7 +8,7 @@ module RelatonCalconnect
         if cctitem
           CcBibliographicItem.new(item_data(cctitem))
         else
-          warn "[relato-calconnect] can't find bibitem or bibdata element in the XML"
+          warn "[relaton-calconnect] can't find bibitem or bibdata element in the XML"
         end
       end
     end
