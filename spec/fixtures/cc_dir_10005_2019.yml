@@ -43,7 +43,8 @@ revdate: '2019-06-05'
 language: en
 script: Latn
 docstatus:
-  stage: published
+  stage:
+    value: published
 copyright:
   owner:
     name: CalConnect
