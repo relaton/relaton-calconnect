@@ -1,5 +1,4 @@
 module RelatonCalconnect
-  class HashConverter < RelatonIsoBib::HashConverter
-
+  class HashConverter < RelatonBib::HashConverter
   end
 end

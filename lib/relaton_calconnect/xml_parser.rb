@@ -1,5 +1,5 @@
 module RelatonCalconnect
-  class XMLParser < RelatonIsoBib::XMLParser
+  class XMLParser < RelatonBib::XMLParser
     class << self
       # override RelatonBib::BibliographicItem.bib_item method
       # @param item_hash [Hash]

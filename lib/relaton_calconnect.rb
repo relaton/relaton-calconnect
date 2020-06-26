@@ -1,4 +1,4 @@
-require "relaton_iso_bib"
+require "relaton_bib"
 require "relaton_calconnect/version"
 require "relaton_calconnect/cc_bibliography"
 require "relaton_calconnect/hit_collection"
