@@ -15,18 +15,19 @@ RSpec.describe RelatonCalconnect do
     it "hits" do
       VCR.use_cassette "data", match_requests_on: [:path] do
         VCR.use_cassette "cc_dir_10005_2019", match_requests_on: [:path] do
-          hit_collection = RelatonCalconnect::CcBibliography.search("CC/DIR 10005:2019")
-          expect(hit_collection.fetched).to be false
-          expect(hit_collection.fetch).to be_instance_of RelatonCalconnect::HitCollection
-          expect(hit_collection.fetched).to be true
-          expect(hit_collection.first).to be_instance_of RelatonCalconnect::Hit
+          hc = RelatonCalconnect::CcBibliography.search("CC/DIR 10005:2019")
+          expect(hc.fetched).to be false
+          expect(hc.fetch).to be_instance_of RelatonCalconnect::HitCollection
+          expect(hc.fetched).to be true
+          expect(hc.first).to be_instance_of RelatonCalconnect::Hit
         end
       end
     end
 
     it "raises RequestError" do
       req = double
-      expect(req).to receive(:get).and_raise Faraday::ConnectionFailed.new("Connection error")
+      expect(req).to receive(:get)
+        .and_raise Faraday::ConnectionFailed.new("Connection error")
       expect(Faraday).to receive(:new).and_return req
       expect(File).to receive(:exist?).and_return(true).twice
       expect(File).to receive(:ctime).and_return Time.now - 3600 * 24
@@ -82,7 +83,9 @@ RSpec.describe RelatonCalconnect do
         VCR.use_cassette "cc_dir_10005_2019", match_requests_on: [:path] do
           expect do
             RelatonCalconnect::CcBibliography.get "CC/DIR 10005", "2011"
-          end.to output(%r{no match found online for CC/DIR 10005 year 2011}).to_stderr
+          end.to output(
+            %r{no match found online for CC/DIR 10005 year 2011}
+          ).to_stderr
         end
       end
     end
