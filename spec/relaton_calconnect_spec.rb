@@ -67,7 +67,7 @@ RSpec.describe RelatonCalconnect do
       VCR.use_cassette "data", match_requests_on: [:path] do
         VCR.use_cassette "cc_dir_10005_2019", match_requests_on: [:path] do
           item = RelatonCalconnect::CcBibliography.get "CC/DIR 10005", "2019"
-          file = "spec/fixtures/cc_r_1104_2018.xml"
+          file = "spec/fixtures/cc_dir_10005_2019.xml"
           xml = item.to_xml bibdata: true
           File.write file, xml, encoding: "UTF-8" unless File.exist? file
           expect(xml).to be_equivalent_to File.read file, encoding: "UTF-8"
