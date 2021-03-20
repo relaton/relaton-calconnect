@@ -6,7 +6,7 @@ module RelatonCalconnect
         return unless ret[:editorialgroup]
 
         technical_committee = array(ret[:editorialgroup]).map do |wg|
-          TechnicalCommittee.new RelatonBib::WorkGroup.new(wg)
+          TechnicalCommittee.new RelatonBib::WorkGroup.new(**wg)
         end
         ret[:editorialgroup] = RelatonBib::EditorialGroup.new technical_committee
       end

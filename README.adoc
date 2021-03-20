@@ -101,11 +101,7 @@ hash = YAML.load_file 'spec/fixtures/cc_dir_10005_2019.yml'
 => {"id"=>"CC/DIR10005-2019",
 ...
 
-bib_hash = RelatonCalconnect::HashConverter.hash_to_bib hash
-=> {:id=>"CC/DIR10005-2019",
-...
-
-RelatonCalconnect::CcBibliographicItem.new bib_hash
+RelatonCalconnect::CcBibliographicItem.from_hash hash
 => #<RelatonCalconnect::CcBibliographicItem:0x007fc5a0109f88
 ...
 ----

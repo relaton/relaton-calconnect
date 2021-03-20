@@ -5,7 +5,7 @@ module RelatonCalconnect
       # @param item_hash [Hash]
       # @return [RelatonIsoBib::IsoBibliographicItem]
       def bib_item(item_hash)
-        CcBibliographicItem.new item_hash
+        CcBibliographicItem.new **item_hash
       end
 
       # @param ext [Nokogiri::XML::Element]

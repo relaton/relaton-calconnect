@@ -28,8 +28,7 @@ module RelatonCalconnect
     # @param hash [Hash]
     # @return [RelatonIsoBib::CcBibliographicItem]
     def hash_to_bib(hash)
-      item_hash = ::RelatonCalconnect::HashConverter.hash_to_bib(hash)
-      ::RelatonCalconnect::CcBibliographicItem.new item_hash
+      ::RelatonCalconnect::CcBibliographicItem.from_hash hash
     end
 
     # Returns hash of XML grammar
