@@ -3,7 +3,7 @@ module RelatonCalconnect
     class << self
       # @param text [String]
       # @return [RelatonCalconnect::HitCollection]
-      def search(text, year = nil, opts = {})
+      def search(text, year = nil, _opts = {})
         HitCollection.new text, year
       rescue Faraday::ConnectionFailed
         raise RelatonBib::RequestError, "Could not access https://standards.calconnect.org"
@@ -18,11 +18,11 @@ module RelatonCalconnect
       # @option opts [TrueClass, FalseClass] :bibdata
       #
       # @return [RelatonCalconnect::CcBibliographicItem]
-      def get(ref, year = nil, opts = {})
+      def get(ref, year = nil, opts = {}) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
         code = ref
 
         if year.nil?
-          /^(?<code1>[^\s]+(\s\w+)?\s[\d-]+):?(?<year1>\d{4})?/ =~ ref
+          /^(?<code1>[^\s]+(?:\s\w+)?\s[\d-]+):?(?<year1>\d{4})?/ =~ ref
           unless code1.nil?
             code = code1
             year = year1
@@ -30,7 +30,7 @@ module RelatonCalconnect
         end
 
         warn "[relaton-calconnect] (\"#{ref}\") fetching..."
-        result = bib_search_filter(code, year, opts) || (return nil)
+        result = search(code, year, opts) || (return nil)
         ret = bib_results_filter(result, year)
         if ret[:ret]
           warn "[relaton-calconnect] (\"#{ref}\") found #{ret[:ret].docidentifier.first.id}"
@@ -41,10 +41,6 @@ module RelatonCalconnect
       end
 
       private
-
-      def bib_search_filter(code, year, opts)
-        search(code, year, opts)
-      end
 
       # Sort through the results from RelatonNist, fetching them three at a time,
       # and return the first result that matches the code,
@@ -80,8 +76,8 @@ module RelatonCalconnect
         warn "[relaton-calconnect] WARNING: no match found online for #{id}. "\
           "The code must be exactly like it is on the standards website."
         unless missed_years.empty?
-          warn "[relaton-calconnect] (There was no match for #{year}, though there were matches "\
-            "found for #{missed_years.join(', ')}.)"
+          warn "[relaton-calconnect] (There was no match for #{year}, though "\
+            "there were matches found for #{missed_years.join(', ')}.)"
         end
         nil
       end

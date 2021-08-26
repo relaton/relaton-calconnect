@@ -50,5 +50,5 @@ copyright:
     name: CalConnect
   from: '2019'
 editorialgroup:
-  content: PUBLISH
+  name: PUBLISH
 doctype: directive

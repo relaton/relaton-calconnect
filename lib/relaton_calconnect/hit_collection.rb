@@ -23,7 +23,7 @@ module RelatonCalconnect
     private
 
     #
-    # Fetch data form yaml
+    # Fetch data from yaml
     #
     # @param docid [String]
     def from_yaml(docid, **_opts)
@@ -44,7 +44,7 @@ module RelatonCalconnect
     end
 
     #
-    # fetch data form server and save it to file.
+    # fetch data from server and save it to file.
     #
     def fetch_data
       resp = Faraday.new(ENDPOINT, headers: { "If-None-Match" => etag }).get
@@ -57,7 +57,7 @@ module RelatonCalconnect
     end
 
     #
-    # Read ETag form file
+    # Read ETag from file
     #
     # @return [String, NilClass]
     def etag

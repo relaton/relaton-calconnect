@@ -9,7 +9,7 @@ module RelatonCalconnect
     # @return [RelatonIsoBib::CcBibliographicItem]
     def self.from_hash(hash)
       item_hash = ::RelatonCalconnect::HashConverter.hash_to_bib(hash)
-      new **item_hash
+      new(**item_hash)
     end
   end
 end
