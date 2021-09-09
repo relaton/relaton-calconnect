@@ -66,7 +66,7 @@ module RelatonCalconnect
 
     def write_doc(docid, bib)
       content = @format == "xml" ? bib.to_xml(bibdata: true) : bib.to_hash.to_yaml
-      file = File.join @output, "#{docid.downcase.gsub(%r{[/\s:]}, '_')}.#{@format}"
+      file = File.join @output, "#{docid.upcase.gsub(%r{[/\s:]}, '_')}.#{@format}"
       # if File.exist? file
       #   warn "#{file} exist"
       # else

@@ -8,9 +8,9 @@ RSpec.describe "Data fetcher" do
     expect(resp).to receive(:[]).with(:etag).and_return "1234"
     faraday = double "Faraday instance", get: resp
     expect(Faraday).to receive(:new).and_return faraday
-    expect(File).to receive(:write).with("data/cc_adm_0401_2004.yaml", kind_of(String), encoding: "UTF-8")
-    expect(File).to receive(:write).with("data/cc_adv_0707_2007.yaml", kind_of(String), encoding: "UTF-8")
-    expect(File).to receive(:write).with("data/cc_adm_0812_2008.yaml", kind_of(String), encoding: "UTF-8")
+    expect(File).to receive(:write).with("data/CC_ADM_0401_2004.yaml", kind_of(String), encoding: "UTF-8")
+    expect(File).to receive(:write).with("data/CC_ADV_0707_2007.yaml", kind_of(String), encoding: "UTF-8")
+    expect(File).to receive(:write).with("data/CC_ADM_0812_2008.yaml", kind_of(String), encoding: "UTF-8")
     expect(File).to receive(:write).with("data/etag.txt", "1234", encoding: "UTF-8")
     VCR.use_cassette "fetch_data" do
       RelatonCalconnect::DataFetcher.fetch # output: "dir", format: "xml"
