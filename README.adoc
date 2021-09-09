@@ -106,6 +106,25 @@ RelatonCalconnect::CcBibliographicItem.from_hash hash
 ...
 ----
 
+=== Fetch data
+
+This gem uses the https://raw.githubusercontent.com/usnistgov/NIST-Tech-Pubs/nist-pages/xml/allrecords.xml dataset as one of data sources.
+
+The method `RelatonCalconnect::DataFetcher.fetch(output: "data", format: "yaml")` fetches all the documents from the datast and save them to the `./data` folder in YAML format.
+Arguments:
+
+- `output` - folder to save documents (default './data').
+- `format` - format in which the documents are saved. Possimle formats are: `yaml`, `xml` (default `yaml`).
+
+[source,ruby]
+----
+RelatonCalconnect::DataFetcher.fetch
+Started at: 2021-09-09 16:03:51 +0200
+Stopped at: 2021-09-09 16:04:12 +0200
+Done in: 20 sec.
+=> nil
+----
+
 == Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

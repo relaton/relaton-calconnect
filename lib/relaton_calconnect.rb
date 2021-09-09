@@ -8,6 +8,7 @@ require "relaton_calconnect/technical_committee"
 require "relaton_calconnect/cc_bibliographic_item"
 require "relaton_calconnect/xml_parser"
 require "relaton_calconnect/hash_converter"
+require "relaton_calconnect/data_fetcher"
 
 module RelatonCalconnect
   class Error < StandardError; end

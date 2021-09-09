@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://standards.calconnect.org/csd/cc-10005.rxl
+    uri: https://standards.calconnect.org/csd/cc-0707.rxl
     body:
       encoding: US-ASCII
       string: ''
@@ -21,34 +21,34 @@ http_interactions:
       Content-Type:
       - binary/octet-stream
       Content-Length:
-      - '924'
+      - '949'
       Connection:
       - keep-alive
+      Date:
+      - Thu, 09 Sep 2021 10:29:58 GMT
       Last-Modified:
-      - Tue, 23 Jun 2020 03:53:51 GMT
+      - Tue, 23 Jun 2020 03:53:50 GMT
+      Etag:
+      - '"fde9b64f98fd2607d8c547508031cf7b"'
       Server:
       - AmazonS3
-      Date:
-      - Thu, 09 Sep 2021 12:15:13 GMT
-      Etag:
-      - '"a11e39b56e56179e8559a626fa0c798f"'
       X-Cache:
-      - RefreshHit from cloudfront
+      - Miss from cloudfront
       Via:
-      - 1.1 a65cc3f0f56427b7099c895c026d63f0.cloudfront.net (CloudFront)
+      - 1.1 9569de78dc2ca85c5ba29cb17f0eb7ce.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - ZAG50-C1
       X-Amz-Cf-Id:
-      - l9qPmQYsmKzF8tzl5TAn6r-xnzd755BeOitqNWe9LDbPNLeZCbHkWA==
+      - gbINwboDLw2Z-k9-3LBgHLLvih8s555HwaGE_AZRGTDBvYIjgQSYnw==
     body:
       encoding: UTF-8
       string: |-
         <bibdata type="standard">
-        <title language="en" format="text/plain">Guidelines for the implementation of the CalConnect patent policy</title>
-        <docidentifier type="csd">CC/DIR 10005:2019</docidentifier>
-        <docnumber>10005</docnumber>
+        <title language="en" format="text/plain">CalConnect EDST (Extended Daylight Savings Time) Reflections and Recommendations</title>
+        <docidentifier type="csd">CC/Adv 0707:2007</docidentifier>
+        <docnumber>0707</docnumber>
         <date type="published">
-        <on>2019-06-13</on>
+        <on>2007-10-04</on>
         </date>
         <contributor>
         <role type="author"/>
@@ -64,7 +64,7 @@ http_interactions:
         </contributor>
         <edition>1</edition>
         <version>
-        <revision-date>2019-06-13</revision-date>
+        <revision-date>2007-10-04T00:00:00Z</revision-date>
         </version>
         <language>en</language>
         <script>Latn</script>
@@ -72,7 +72,7 @@ http_interactions:
         <stage>published</stage>
         </status>
         <copyright>
-        <from>2019</from>
+        <from>2007</from>
         <owner>
         <organization>
         <name>CalConnect</name>
@@ -80,11 +80,11 @@ http_interactions:
         </owner>
         </copyright>
         <ext>
-        <doctype>directive</doctype>
+        <doctype>advisory</doctype>
         <editorialgroup>
-        <technical-committee>PUBLISH</technical-committee>
+        <technical-committee>Ad Hoc DST</technical-committee>
         </editorialgroup>
         </ext>
         </bibdata>
-  recorded_at: Thu, 09 Sep 2021 12:15:12 GMT
+  recorded_at: Thu, 09 Sep 2021 10:29:57 GMT
 recorded_with: VCR 6.0.0

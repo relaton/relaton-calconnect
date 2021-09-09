@@ -1,0 +1,123 @@
+---
+root:
+  title: CalConnect Document Registry
+  items:
+  - id: CC/Adm0401-2004
+    title:
+    - type: title-main
+      content: July 2004 CalConnect Interoperability Test Rules and Test Scenarios
+        V1.0 (CD 0401)
+      language: en
+      script: Latn
+      format: text/plain
+    - type: main
+      content: July 2004 CalConnect Interoperability Test Rules and Test Scenarios
+        V1.0 (CD 0401)
+      language: en
+      script: Latn
+      format: text/plain
+    link:
+      content: pubdocs/CD0401%20July%202004%20CalConnect%20Interoperability%20Test%20Rules%20and%20Test%20Scenarios%20V1.0.pdf
+      type: pdf
+    type: standard
+    docid:
+      id: CC/Adm 0401:2004
+      type: CC
+    version:
+      revision_date: '2004-07-30'
+    revdate: '2004-07-30'
+    fetched: '2020-06-23'
+    editorialgroup:
+      technical_committee:
+        name: IOPTEST
+    doctype: administrative
+    uri:
+    xml:
+    pdf: pubdocs/CD0401%20July%202004%20CalConnect%20Interoperability%20Test%20Rules%20and%20Test%20Scenarios%20V1.0.pdf
+    doc:
+    html:
+    rxl:
+    txt:
+  - id: CC/Adv0707-2007
+    title:
+      content: CalConnect EDST (Extended Daylight Savings Time) Reflections and Recommendations
+      language: en
+      format: text/plain
+    link:
+    - content: csd/cc-0707.xml
+      type: xml
+    - content: csd/cc-0707.pdf
+      type: pdf
+    - content: csd/cc-0707.doc
+      type: doc
+    - content: csd/cc-0707.html
+      type: html
+    - content: csd/cc-0707.rxl
+      type: rxl
+    type: standard
+    docid:
+      id: CC/Adv 0707:2007
+      type: csd
+    docnumber: '0707'
+    date:
+      type: published
+      value: '2007-10-04'
+    contributor:
+    - organization:
+        name: CalConnect
+      role: author
+    - organization:
+        name: CalConnect
+      role: publisher
+    edition: '1'
+    version:
+      revision_date: '2007-10-04T00:00:00Z'
+    revdate: '2007-10-04T00:00:00Z'
+    language: en
+    script: Latn
+    docstatus:
+      stage:
+        value: published
+    copyright:
+      owner:
+        name: CalConnect
+      from: '2007'
+    fetched: '2020-06-23'
+    uri:
+    xml: csd/cc-0707.xml
+    pdf: csd/cc-0707.pdf
+    doc: csd/cc-0707.doc
+    html: csd/cc-0707.html
+    rxl: csd/cc-0707.rxl
+    txt:
+  - id: CC/Adm0812-2008
+    title:
+    - type: title-main
+      content: Meet CalConnect 2008 (CD 0812)
+      language: en
+      script: Latn
+      format: text/plain
+    - type: main
+      content: Meet CalConnect 2008 (CD 0812)
+      language: en
+      script: Latn
+      format: text/plain
+    type: standard
+    docid:
+      id: CC/Adm 0812:2008
+      type: CC
+    version:
+      revision_date: '2008-11-07'
+    revdate: '2008-11-07'
+    fetched: '2020-06-23'
+    editorialgroup:
+      technical_committee:
+        name: CALCONNECT
+    doctype: administrative
+    uri:
+    xml:
+    pdf:
+    doc:
+    html:
+    rxl:
+    txt:

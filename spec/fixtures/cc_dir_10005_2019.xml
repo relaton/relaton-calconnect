@@ -1,5 +1,10 @@
 <bibdata type="standard">
   <title format="text/plain" language="en">Guidelines for the implementation of the CalConnect patent policy</title>
+  <uri type="xml">https://standards.calconnect.org/csd/cc-10005.xml</uri>
+  <uri type="pdf">https://standards.calconnect.org/csd/cc-10005.pdf</uri>
+  <uri type="doc">https://standards.calconnect.org/csd/cc-10005.doc</uri>
+  <uri type="html">https://standards.calconnect.org/csd/cc-10005.html</uri>
+  <uri type="rxl">https://standards.calconnect.org/csd/cc-10005.rxl</uri>
   <docidentifier type="csd">CC/DIR 10005:2019</docidentifier>
   <docnumber>10005</docnumber>
   <date type="published">
