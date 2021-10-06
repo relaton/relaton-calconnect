@@ -78,7 +78,7 @@ item.to_xml bibdata: true
 
 === Typed links
 
-Each Calconnect documents has link types:
+Each Calconnect document has link types:
 
 * `xml` - XML format
 * `pdf` - PDF format
