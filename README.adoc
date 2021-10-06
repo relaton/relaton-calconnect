@@ -76,6 +76,26 @@ item.to_xml bibdata: true
     </bibdata>"
 ----
 
+=== Typed links
+
+Each BSI documents has link types:
+
+* `xml` - XML format
+* `pdf` - PDF format
+* `doc` - Microsoft Word document format
+* `html` - HTML format
+* `rxl` - RelatonXML format
+
+[source,ruby]
+----
+item.link
+=> [#<RelatonBib::TypedUri:0x00007ff2d4b009e0 @content=#<Addressable::URI:0x668 URI:https://standards.calconnect.org/csd/cc-10005.xml>, @type="xml">,
+ #<RelatonBib::TypedUri:0x00007ff2d4b00378 @content=#<Addressable::URI:0x67c URI:https://standards.calconnect.org/csd/cc-10005.pdf>, @type="pdf">,
+ #<RelatonBib::TypedUri:0x00007ff2d4b00058 @content=#<Addressable::URI:0x690 URI:https://standards.calconnect.org/csd/cc-10005.doc>, @type="doc">,
+ #<RelatonBib::TypedUri:0x00007ff2d4b23d28 @content=#<Addressable::URI:0x6a4 URI:https://standards.calconnect.org/csd/cc-10005.html>, @type="html">,
+ #<RelatonBib::TypedUri:0x00007ff2d4b23a08 @content=#<Addressable::URI:0x6b8 URI:https://standards.calconnect.org/csd/cc-10005.rxl>, @type="rxl">]
+----
+
 === Get code, and year
 [source,ruby]
 ----
