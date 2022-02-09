@@ -23,6 +23,7 @@ root:
     docid:
       id: CC/Adm 0401:2004
       type: CC
+      primary: true
     version:
       revision_date: '2004-07-30'
     revdate: '2004-07-30'
@@ -58,6 +59,7 @@ root:
     docid:
       id: CC/Adv 0707:2007
       type: csd
+      primary: true
     docnumber: '0707'
     date:
       type: published
@@ -106,6 +108,7 @@ root:
     docid:
       id: CC/Adm 0812:2008
       type: CC
+      primary: true
     version:
       revision_date: '2008-11-07'
     revdate: '2008-11-07'

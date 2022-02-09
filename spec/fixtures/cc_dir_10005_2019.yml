@@ -27,6 +27,7 @@ type: standard
 docid:
 - id: CC/DIR 10005:2019
   type: CC
+  primary: true
 docnumber: '10005'
 date:
 - type: published

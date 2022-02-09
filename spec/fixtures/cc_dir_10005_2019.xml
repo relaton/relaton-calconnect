@@ -5,7 +5,7 @@
   <uri type="doc">https://standards.calconnect.org/csd/cc-10005.doc</uri>
   <uri type="html">https://standards.calconnect.org/csd/cc-10005.html</uri>
   <uri type="rxl">https://standards.calconnect.org/csd/cc-10005.rxl</uri>
-  <docidentifier type="csd">CC/DIR 10005:2019</docidentifier>
+  <docidentifier type="csd" primary="true">CC/DIR 10005:2019</docidentifier>
   <docnumber>10005</docnumber>
   <date type="published">
     <on>2019-06-13</on>

@@ -7,7 +7,7 @@ module RelatonCalconnect
     class << self
       # papam hit [Hash]
       # @return [RelatonOgc::OrcBibliographicItem]
-      def parse_page(hit)
+      def parse_page(hit) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
         links = array(hit["link"])
         link = links.detect { |l| l["type"] == "rxl" }
         if link
@@ -15,9 +15,11 @@ module RelatonCalconnect
           update_links bib, links
           # XMLParser.from_xml bib_xml
         else
-          bib = RelatonCalconnect::CcBibliographicItem.from_hash doc_to_hash(hit)
+          bib = RelatonCalconnect::CcBibliographicItem.from_hash doc_to_hash hit
         end
-        bib.link.each { |l| l.content.merge!(scheme: SCHEME, host: HOST) unless l.content.host }
+        bib.link.each do |l|
+          l.content.merge!(scheme: SCHEME, host: HOST) unless l.content.host
+        end
         bib
       end
 
@@ -25,16 +27,7 @@ module RelatonCalconnect
 
       # @param url [String]
       # @return [String] XML
-      def fetch_bib_xml(url)
-        # rxl = get_rxl url
-        # uri_rxl = rxl.at("uri[@type='rxl']")
-        # return rxl.to_xml unless uri_rxl
-
-        # uri_xml = rxl.xpath("//uri").to_xml
-        # rxl = get_rxl uri_rxl.text
-        # docid = rxl.at "//docidentifier"
-        # docid.add_previous_sibling uri_xml
-        # rxl.to_xml
+      def fetch_bib_xml(url) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
         rxl = get_rxl url
         uri_rxl = rxl.at("uri[@type='rxl']")
         if uri_rxl
@@ -44,6 +37,7 @@ module RelatonCalconnect
           docid.add_previous_sibling uri_xml
         end
         xml = rxl.to_xml.gsub!(%r{(</?)technical-committee(>)}, '\1committee\2')
+          .gsub(%r{type="(?:csd|CC)"(?=>)}i, '\0 primary="true"')
         RelatonCalconnect::XMLParser.from_xml xml
       end
 
@@ -66,6 +60,8 @@ module RelatonCalconnect
           tc = eg.delete("technical_committee")
           eg.merge!(tc) if tc
         end
+        dtps = %w[CC CSD]
+        array(doc["docid"]).detect { |id| dtps.include? id["type"].upcase }["primary"] = true
         doc
       end
 
