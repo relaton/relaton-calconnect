@@ -20,6 +20,6 @@ RSpec.describe "Data fetcher" do
   it "log error" do
     df = RelatonCalconnect::DataFetcher.new "dir", "xml"
     expect(RelatonCalconnect::Scrapper).to receive(:parse_page).and_raise StandardError
-    expect { df.send(:parse_page, { "docid" => { "id" => "1234" }}) }.to output(/Document: 1234/).to_stderr
+    expect { df.send(:parse_page, { "docid" => { "id" => "1234" } }) }.to output(/Document: 1234/).to_stderr
   end
 end

@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.1.0
+      - Faraday v2.2.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Tue, 08 Feb 2022 16:50:09 GMT
+      - Fri, 08 Apr 2022 15:06:23 GMT
       Last-Modified:
       - Tue, 23 Jun 2020 03:53:50 GMT
       Etag:
@@ -35,11 +35,11 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 21da0a66bafe2c8de8be4a4d8039346a.cloudfront.net (CloudFront)
+      - 1.1 95508d0aed3588037de00c6e5e9d2eba.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - FRA6-C1
+      - BUD50-C1
       X-Amz-Cf-Id:
-      - AgzYVf4Y5P9IJ9brezN_5DJZUIiF6-DzW2fektaUNZWpysKsnNYYHw==
+      - TKva5S76gPVVQLhyt5TcPpjRN65oTygepyBeLCBGmlOqgociByRnHw==
     body:
       encoding: UTF-8
       string: |-
@@ -86,5 +86,5 @@ http_interactions:
         </editorialgroup>
         </ext>
         </bibdata>
-  recorded_at: Tue, 08 Feb 2022 16:50:08 GMT
-recorded_with: VCR 6.0.0
+  recorded_at: Fri, 08 Apr 2022 15:06:22 GMT
+recorded_with: VCR 6.1.0
