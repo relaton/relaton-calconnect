@@ -7,7 +7,7 @@ module RelatonCalconnect
     def initialize # rubocop:disable Lint/MissingSuper
       @short = :relaton_calconnect
       @prefix = "CC"
-      @defaultprefix = %r{^CC\s}
+      @defaultprefix = %r{^CC(?!\w)}
       @idtype = "CC"
       @datasets = %w[calconnect-org]
     end

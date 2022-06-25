@@ -60,7 +60,7 @@ module RelatonCalconnect
     rescue StandardError => e
       warn "Document: #{doc['docid']['id']}"
       warn e.message
-      puts e.backtrace
+      warn e.backtrace[0..5].join("\n")
       false
     end
 
