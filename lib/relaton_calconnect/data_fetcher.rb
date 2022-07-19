@@ -21,7 +21,7 @@ module RelatonCalconnect
     def self.fetch(output: "data", format: "yaml")
       t1 = Time.now
       puts "Started at: #{t1}"
-      FileUtils.mkdir_p output unless Dir.exist? output
+      FileUtils.mkdir_p output
       new(output, format).fetch
       t2 = Time.now
       puts "Stopped at: #{t2}"

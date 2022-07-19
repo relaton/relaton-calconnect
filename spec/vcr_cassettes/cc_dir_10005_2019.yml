@@ -24,22 +24,24 @@ http_interactions:
       - '924'
       Connection:
       - keep-alive
-      Date:
-      - Thu, 23 Jun 2022 09:27:45 GMT
       Last-Modified:
       - Tue, 23 Jun 2020 03:53:51 GMT
-      Etag:
-      - '"a11e39b56e56179e8559a626fa0c798f"'
       Server:
       - AmazonS3
+      Date:
+      - Tue, 19 Jul 2022 09:26:28 GMT
+      Etag:
+      - '"a11e39b56e56179e8559a626fa0c798f"'
+      Vary:
+      - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - RefreshHit from cloudfront
       Via:
-      - 1.1 b8c21c40c485a68c7663b93787f93464.cloudfront.net (CloudFront)
+      - 1.1 f1f7e88380a0546160e4e023c7c1d332.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - ZAG50-C1
       X-Amz-Cf-Id:
-      - Td9PQ_6OcwG9CqsTMfU8As_oMOJ2JF47s_blh1cdYrlYOuOVI5t4sA==
+      - Anma1JAGiUQl_qwlsSnVJcoHX1xiAau2FcKalOKLbA5IQ5zGKuSr_A==
     body:
       encoding: UTF-8
       string: |-
@@ -86,5 +88,5 @@ http_interactions:
         </editorialgroup>
         </ext>
         </bibdata>
-  recorded_at: Thu, 23 Jun 2022 09:27:44 GMT
+  recorded_at: Tue, 19 Jul 2022 09:26:27 GMT
 recorded_with: VCR 6.1.0

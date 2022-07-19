@@ -1,6 +1,6 @@
 RSpec.describe "Data fetcher" do
   it "fetch with default options" do
-    expect(Dir).to receive(:exist?).with("data").and_return true
+    expect(FileUtils).to receive(:mkdir_p).with("data")
     expect(File).to receive(:exist?).with("data/etag.txt").and_return false
     allow(File).to receive(:exist?).and_call_original
     body = File.read "spec/fixtures/data.yaml", encoding: "UTF-8"
