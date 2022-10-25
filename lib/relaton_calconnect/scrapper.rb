@@ -5,8 +5,13 @@ module RelatonCalconnect
     # DOMAIN = "http://127.0.0.1:4000/".freeze
 
     class << self
-      # papam hit [Hash]
-      # @return [RelatonOgc::OrcBibliographicItem]
+      #
+      # Parse document page
+      #
+      # @papam hit [Hash] document hash
+      #
+      # @return [RelatonCalconnect::CcBibliographicItem] bibliographic item
+      #
       def parse_page(hit) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
         links = array(hit["link"])
         link = links.detect { |l| l["type"] == "rxl" }
@@ -15,6 +20,7 @@ module RelatonCalconnect
           update_links bib, links
           # XMLParser.from_xml bib_xml
         else
+          hit.delete "fetched"
           bib = RelatonCalconnect::CcBibliographicItem.from_hash doc_to_hash hit
         end
         bib.link.each do |l|
@@ -25,8 +31,13 @@ module RelatonCalconnect
 
       private
 
-      # @param url [String]
-      # @return [String] XML
+      #
+      # Fetch bibliographic item from XML source
+      #
+      # @param url [String] URL to fetch
+      #
+      # @return [RelatonCalconnect::CcBibliographicItem] bibliographic item
+      #
       def fetch_bib_xml(url) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
         rxl = get_rxl url
         uri_rxl = rxl.at("uri[@type='rxl']")
@@ -61,7 +72,8 @@ module RelatonCalconnect
           eg.merge!(tc) if tc
         end
         dtps = %w[CC CSD]
-        array(doc["docid"]).detect { |id| dtps.include? id["type"].upcase }["primary"] = true
+        did = array(doc["docid"]).detect { |id| dtps.include? id["type"].upcase }
+        did["primary"] = true if did
         doc
       end
 
