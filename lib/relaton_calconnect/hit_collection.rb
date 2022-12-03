@@ -26,6 +26,9 @@ module RelatonCalconnect
     # Fetch data from yaml
     #
     # @param docid [String]
+    #
+    # @return [Array<RelatonBib::Hit>]
+    #
     def from_yaml(docid, **_opts)
       data["root"]["items"].select do |doc|
         doc["docid"] && doc["docid"]["id"].include?(docid)

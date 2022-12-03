@@ -43,14 +43,10 @@ item = hits[0].fetch
 [source,ruby]
 ----
 item.to_xml
-=> "<bibitem id="CC/DIR10005-2019" type="standard">
+=> "<bibitem id="CC-DIR10005-2019" type="standard" schema-version="v1.2.1">
       <title format="text/plain" language="en">Guidelines for the implementation of the CalConnect patent policy</title>
-      <uri type="xml">csd/cc-10005.xml</uri>
-      <uri type="pdf">csd/cc-10005.pdf</uri>
-      <uri type="doc">csd/cc-10005.doc</uri>
-      <uri type="html">csd/cc-10005.html</uri>
-      <uri type="rxl">csd/cc-10005.rxl</uri>
-      <docidentifier type="csd">CC/DIR 10005:2019</docidentifier>
+      <uri type="xml">https://standards.calconnect.org/csd/cc-10005.xml</uri>
+      <uri type="pdf">https://standards.calconnect.org/csd/cc-10005.pdf</uri>
       ...
     </bibitem>"
 ----
@@ -58,19 +54,14 @@ With argument `bibdata: true` it ouputs XML wrapped by `bibdata` element and add
 [source,ruby]
 ----
 item.to_xml bibdata: true
-=> "<bibdata type="standard">
-      <title format="text/plain" language=en>Guidelines for the implementation of the CalConnect patent policy</title>
-      <uri type="xml">csd/cc-10005.xml</uri>
-      <uri type="pdf">csd/cc-10005.pdf</uri>
-      <uri type="doc">csd/cc-10005.doc</uri>
-      <uri type="html">csd/cc-10005.html</uri>
-      <uri type="rxl">csd/cc-10005.rxl</uri>
-      <docidentifier type="csd">CC/DIR 10005:2019</docidentifier>
+=> "<bibdata type="standard" schema-version="v1.2.1">
+      <title format="text/plain" language="en">Guidelines for the implementation of the CalConnect patent policy</title>
+      <uri type="xml">https://standards.calconnect.org/csd/cc-10005.xml</uri>
       ...
-      <ext>
+      <ext schema-version="v1.0.0">
         <doctype>directive</doctype>
         <editorialgroup>
-          <technical-committee>PUBLISH</technical-committee>
+          <committee>PUBLISH</committee>
         </editorialgroup>
       </ext>
     </bibdata>"

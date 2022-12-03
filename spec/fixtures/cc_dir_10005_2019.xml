@@ -1,4 +1,5 @@
-<bibdata type="standard">
+<bibdata type="standard" schema-version="v1.2.1">
+  <fetched>2022-11-23</fetched>
   <title format="text/plain" language="en">Guidelines for the implementation of the CalConnect patent policy</title>
   <uri type="xml">https://standards.calconnect.org/csd/cc-10005.xml</uri>
   <uri type="pdf">https://standards.calconnect.org/csd/cc-10005.pdf</uri>
@@ -39,7 +40,7 @@
       </organization>
     </owner>
   </copyright>
-  <ext>
+  <ext schema-version="v1.0.0">
     <doctype>directive</doctype>
     <editorialgroup>
       <committee>PUBLISH</committee>

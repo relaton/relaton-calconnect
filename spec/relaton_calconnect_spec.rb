@@ -56,7 +56,8 @@ RSpec.describe RelatonCalconnect do
           xml = item.to_xml bibdata: true
           File.write file, xml, encoding: "UTF-8" unless File.exist? file
           expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
-          schema = Jing.new "spec/fixtures/isobib.rng"
+            .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+          schema = Jing.new "grammars/relaton-cc-compile.rng"
           errors = schema.validate file
           expect(errors).to eq []
         end
@@ -70,8 +71,9 @@ RSpec.describe RelatonCalconnect do
           file = "spec/fixtures/cc_dir_10005_2019.xml"
           xml = item.to_xml bibdata: true
           File.write file, xml, encoding: "UTF-8" unless File.exist? file
-          expect(xml).to be_equivalent_to File.read file, encoding: "UTF-8"
-          schema = Jing.new "spec/fixtures/isobib.rng"
+          expect(xml).to be_equivalent_to File.read(file, encoding: "UTF-8")
+            .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+          schema = Jing.new "grammars/relaton-cc-compile.rng"
           errors = schema.validate file
           expect(errors).to eq []
         end
@@ -83,9 +85,7 @@ RSpec.describe RelatonCalconnect do
         VCR.use_cassette "cc_dir_10005_2019", match_requests_on: [:path] do
           expect do
             RelatonCalconnect::CcBibliography.get "CC/DIR 10005", "2011"
-          end.to output(
-            %r{no match found online for CC/DIR 10005 year 2011}
-          ).to_stderr
+          end.to output(%r{no match found online for CC/DIR 10005 year 2011}).to_stderr
         end
       end
     end

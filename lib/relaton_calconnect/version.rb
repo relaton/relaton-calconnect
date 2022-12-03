@@ -1,3 +1,3 @@
 module RelatonCalconnect
-  VERSION = "1.13.1".freeze
+  VERSION = "1.14.0".freeze
 end

@@ -57,6 +57,7 @@ module RelatonCalconnect
         missed_years = []
         result.each do |r|
           item = r.fetch
+          item.fetched = Date.today.to_s
           return { ret: item } if !year
 
           item.date.select { |d| d.type == "published" }.each do |d|
