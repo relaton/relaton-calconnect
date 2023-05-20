@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.10.2
+      - Faraday v2.7.4
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -29,7 +29,7 @@ http_interactions:
       Server:
       - AmazonS3
       Date:
-      - Sat, 03 Dec 2022 05:23:31 GMT
+      - Sat, 20 May 2023 21:55:15 GMT
       Etag:
       - '"fde9b64f98fd2607d8c547508031cf7b"'
       Vary:
@@ -37,11 +37,11 @@ http_interactions:
       X-Cache:
       - RefreshHit from cloudfront
       Via:
-      - 1.1 ffa4b37ccdc94a8c62bf6b6414725210.cloudfront.net (CloudFront)
+      - 1.1 d3e18540f1ffcc51fabe97925bd1df54.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - IAD89-C3
+      - ATL58-P3
       X-Amz-Cf-Id:
-      - vRVMQHyM39fNW0y1Ev0fLG5gnv2-H_SLpRnFhQVfzgaUzCbB97gI4Q==
+      - 8jtO_vwHcToj2Nz-o1Rp4f-FfqBEEaofG6R9i67_wDK2C7srbwxiGw==
     body:
       encoding: UTF-8
       string: |-
@@ -88,5 +88,5 @@ http_interactions:
         </editorialgroup>
         </ext>
         </bibdata>
-  recorded_at: Sat, 03 Dec 2022 05:23:30 GMT
+  recorded_at: Sat, 20 May 2023 21:55:14 GMT
 recorded_with: VCR 6.1.0
