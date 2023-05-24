@@ -13,24 +13,18 @@ RSpec.describe RelatonCalconnect do
 
   context "search" do
     it "hits" do
-      VCR.use_cassette "data", match_requests_on: [:path] do
-        VCR.use_cassette "cc_dir_10005_2019", match_requests_on: [:path] do
-          hc = RelatonCalconnect::CcBibliography.search("CC/DIR 10005:2019")
-          expect(hc.fetched).to be false
-          expect(hc.fetch).to be_instance_of RelatonCalconnect::HitCollection
-          expect(hc.fetched).to be true
-          expect(hc.first).to be_instance_of RelatonCalconnect::Hit
-        end
+      VCR.use_cassette "cc_dir_10005_2019", match_requests_on: [:path] do
+        hc = RelatonCalconnect::CcBibliography.search("CC/DIR 10005:2019")
+        expect(hc.fetched).to be false
+        expect(hc.fetch).to be_instance_of RelatonCalconnect::HitCollection
+        expect(hc.fetched).to be true
+        expect(hc.first).to be_instance_of RelatonCalconnect::Hit
       end
     end
 
     it "raises RequestError" do
-      req = double
-      expect(req).to receive(:get)
+      expect(RelatonCalconnect::HitCollection).to receive(:new)
         .and_raise Faraday::ConnectionFailed.new("Connection error")
-      expect(Faraday).to receive(:new).and_return req
-      expect(File).to receive(:exist?).and_return(true).twice
-      expect(File).to receive(:ctime).and_return Time.now - 3600 * 24
       expect do
         RelatonCalconnect::CcBibliography.search("CC/DIR 10005:2019")
       end.to raise_error RelatonBib::RequestError

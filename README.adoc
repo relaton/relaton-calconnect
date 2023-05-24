@@ -50,7 +50,7 @@ item.to_xml
       ...
     </bibitem>"
 ----
-With argument `bibdata: true` it ouputs XML wrapped by `bibdata` element and adds flavour `ext` element.
+With argument `bibdata: true` it outputs XML wrapped by `bibdata` element and adds flavour `ext` element.
 [source,ruby]
 ----
 item.to_xml bibdata: true
@@ -87,7 +87,7 @@ item.link
  #<RelatonBib::TypedUri:0x00007ff2d4b23a08 @content=#<Addressable::URI:0x6b8 URI:https://standards.calconnect.org/csd/cc-10005.rxl>, @type="rxl">]
 ----
 
-=== Get document by code, and year
+=== Get document by code and year
 [source,ruby]
 ----
 RelatonCalconnect::CcBibliography.get "CC/DIR 10005", "2019", {}

@@ -2,10 +2,115 @@
 http_interactions:
 - request:
     method: get
-    uri: https://standards.calconnect.org/csd/cc-10005.rxl
+    uri: https://raw.githubusercontent.com/relaton/relaton-data-calconnect/main/index-v1.zip
     body:
       encoding: US-ASCII
-      string: ''
+      base64_string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1642'
+      Cache-Control:
+      - max-age=300
+      Content-Security-Policy:
+      - default-src 'none'; style-src 'unsafe-inline'; sandbox
+      Content-Type:
+      - application/zip
+      Etag:
+      - W/"32af489ba291a6036f4bb92c6b7d88cb70dd31f0f6187cd08bb236b9488069a0"
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Github-Request-Id:
+      - 51DA:11C5:35EDA2:401FFA:646E38D5
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Wed, 24 May 2023 16:18:29 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-atl18421-ATL
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1684945109.444915,VS0,VE96
+      Vary:
+      - Authorization,Accept-Encoding,Origin
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fastly-Request-Id:
+      - 3d7feade3fa86ea935f478b971fb569f57d1ad5a
+      Expires:
+      - Wed, 24 May 2023 16:23:29 GMT
+      Source-Age:
+      - '0'
+    body:
+      encoding: UTF-8
+      base64_string: |
+        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
+        UEsFBgAAAAABAAEAUwAAAAEGAAAAAA==
+  recorded_at: Wed, 24 May 2023 16:18:29 GMT
+- request:
+    method: get
+    uri: https://raw.githubusercontent.com/relaton/relaton-data-calconnect/main/data/CC_DIR_10005_2019.yaml
+    body:
+      encoding: US-ASCII
+      base64_string: ''
     headers:
       User-Agent:
       - Faraday v2.7.4
@@ -18,75 +123,80 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Content-Type:
-      - binary/octet-stream
-      Content-Length:
-      - '924'
       Connection:
       - keep-alive
-      Last-Modified:
-      - Tue, 23 Jun 2020 03:53:51 GMT
-      Server:
-      - AmazonS3
-      Date:
-      - Sat, 20 May 2023 21:55:16 GMT
+      Content-Length:
+      - '1162'
+      Cache-Control:
+      - max-age=300
+      Content-Security-Policy:
+      - default-src 'none'; style-src 'unsafe-inline'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
       Etag:
-      - '"a11e39b56e56179e8559a626fa0c798f"'
-      Vary:
-      - Accept-Encoding
-      X-Cache:
-      - RefreshHit from cloudfront
+      - W/"e2e18772c9bd6ccb7f62a829c8e8d2fdb294139f2e87af9689429b940f751a43"
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Github-Request-Id:
+      - 3D1E:6839:3AE331:451582:646E38D5
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Wed, 24 May 2023 16:18:29 GMT
       Via:
-      - 1.1 1d886ff32dfa513b28c58d838f712056.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - ATL58-P3
-      X-Amz-Cf-Id:
-      - 7PRLK6zVSJ0T7_0fSTDCHLN17H9U7Zu5v4vygxjPDLZXNQjdMJ9MIQ==
+      - 1.1 varnish
+      X-Served-By:
+      - cache-atl18452-ATL
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1684945110.755937,VS0,VE105
+      Vary:
+      - Authorization,Accept-Encoding,Origin
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fastly-Request-Id:
+      - 6fafb1b4c4427bbf30d22709ae163cf28a1320dc
+      Expires:
+      - Wed, 24 May 2023 16:23:29 GMT
+      Source-Age:
+      - '0'
     body:
-      encoding: UTF-8
-      string: |-
-        <bibdata type="standard">
-        <title language="en" format="text/plain">Guidelines for the implementation of the CalConnect patent policy</title>
-        <docidentifier type="csd">CC/DIR 10005:2019</docidentifier>
-        <docnumber>10005</docnumber>
-        <date type="published">
-        <on>2019-06-13</on>
-        </date>
-        <contributor>
-        <role type="author"/>
-        <organization>
-        <name>CalConnect</name>
-        </organization>
-        </contributor>
-        <contributor>
-        <role type="publisher"/>
-        <organization>
-        <name>CalConnect</name>
-        </organization>
-        </contributor>
-        <edition>1</edition>
-        <version>
-        <revision-date>2019-06-13</revision-date>
-        </version>
-        <language>en</language>
-        <script>Latn</script>
-        <status>
-        <stage>published</stage>
-        </status>
-        <copyright>
-        <from>2019</from>
-        <owner>
-        <organization>
-        <name>CalConnect</name>
-        </organization>
-        </owner>
-        </copyright>
-        <ext>
-        <doctype>directive</doctype>
-        <editorialgroup>
-        <technical-committee>PUBLISH</technical-committee>
-        </editorialgroup>
-        </ext>
-        </bibdata>
-  recorded_at: Sat, 20 May 2023 21:55:15 GMT
+      encoding: ASCII-8BIT
+      base64_string: |
+        LS0tCnNjaGVtYS12ZXJzaW9uOiB2MS4yLjMKaWQ6IENDLURJUjEwMDA1LTIw
+        MTkKdGl0bGU6Ci0gY29udGVudDogR3VpZGVsaW5lcyBmb3IgdGhlIGltcGxl
+        bWVudGF0aW9uIG9mIHRoZSBDYWxDb25uZWN0IHBhdGVudCBwb2xpY3kKICBs
+        YW5ndWFnZToKICAtIGVuCiAgZm9ybWF0OiB0ZXh0L3BsYWluCmxpbms6Ci0g
+        Y29udGVudDogaHR0cHM6Ly9zdGFuZGFyZHMuY2FsY29ubmVjdC5vcmcvY3Nk
+        L2NjLTEwMDA1LnhtbAogIHR5cGU6IHhtbAotIGNvbnRlbnQ6IGh0dHBzOi8v
+        c3RhbmRhcmRzLmNhbGNvbm5lY3Qub3JnL2NzZC9jYy0xMDAwNS5wZGYKICB0
+        eXBlOiBwZGYKLSBjb250ZW50OiBodHRwczovL3N0YW5kYXJkcy5jYWxjb25u
+        ZWN0Lm9yZy9jc2QvY2MtMTAwMDUuZG9jCiAgdHlwZTogZG9jCi0gY29udGVu
+        dDogaHR0cHM6Ly9zdGFuZGFyZHMuY2FsY29ubmVjdC5vcmcvY3NkL2NjLTEw
+        MDA1Lmh0bWwKICB0eXBlOiBodG1sCi0gY29udGVudDogaHR0cHM6Ly9zdGFu
+        ZGFyZHMuY2FsY29ubmVjdC5vcmcvY3NkL2NjLTEwMDA1LnJ4bAogIHR5cGU6
+        IHJ4bAp0eXBlOiBzdGFuZGFyZApkb2NpZDoKLSBpZDogQ0MvRElSIDEwMDA1
+        OjIwMTkKICB0eXBlOiBjc2QKICBwcmltYXJ5OiB0cnVlCmRvY251bWJlcjog
+        JzEwMDA1JwpkYXRlOgotIHR5cGU6IHB1Ymxpc2hlZAogIHZhbHVlOiAnMjAx
+        OS0wNi0xMycKY29udHJpYnV0b3I6Ci0gb3JnYW5pemF0aW9uOgogICAgbmFt
+        ZToKICAgIC0gY29udGVudDogQ2FsQ29ubmVjdAogIHJvbGU6CiAgLSB0eXBl
+        OiBhdXRob3IKLSBvcmdhbml6YXRpb246CiAgICBuYW1lOgogICAgLSBjb250
+        ZW50OiBDYWxDb25uZWN0CiAgcm9sZToKICAtIHR5cGU6IHB1Ymxpc2hlcgpl
+        ZGl0aW9uOgogIGNvbnRlbnQ6ICcxJwp2ZXJzaW9uOgotIHJldmlzaW9uX2Rh
+        dGU6ICcyMDE5LTA2LTEzJwpyZXZkYXRlOiAnMjAxOS0wNi0xMycKbGFuZ3Vh
+        Z2U6Ci0gZW4Kc2NyaXB0OgotIExhdG4KZG9jc3RhdHVzOgogIHN0YWdlOgog
+        ICAgdmFsdWU6IHB1Ymxpc2hlZApjb3B5cmlnaHQ6Ci0gb3duZXI6CiAgLSBu
+        YW1lOgogICAgLSBjb250ZW50OiBDYWxDb25uZWN0CiAgZnJvbTogJzIwMTkn
+        CmRvY3R5cGU6IGRpcmVjdGl2ZQplZGl0b3JpYWxncm91cDoKLSBuYW1lOiBQ
+        VUJMSVNICmV4dDoKICBzY2hlbWEtdmVyc2lvbjogdjEuMC4wCg==
+  recorded_at: Wed, 24 May 2023 16:18:29 GMT
 recorded_with: VCR 6.1.0
