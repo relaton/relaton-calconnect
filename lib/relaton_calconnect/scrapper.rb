@@ -47,7 +47,7 @@ module RelatonCalconnect
           docid = rxl.at "//docidentifier"
           docid.add_previous_sibling uri_xml
         end
-        xml = rxl.to_xml.gsub!(%r{(</?)technical-committee(>)}, '\1committee\2')
+        xml = rxl.to_xml.gsub(%r{(</?)technical-committee(>)}, '\1committee\2')
           .gsub(%r{type="(?:csd|CC)"(?=>)}i, '\0 primary="true"')
         RelatonCalconnect::XMLParser.from_xml xml
       end

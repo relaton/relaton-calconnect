@@ -16,8 +16,19 @@ module RelatonCalconnect
       @output = output
       @etagfile = File.join output, "etag.txt"
       @format = format
+      @ext = format.sub "bibxml", "xml"
+      @files = []
+      @index = Relaton::Index.find_or_create :CC, file: "index-v1.yaml"
     end
 
+    #
+    # Fetch all the documents from a source
+    #
+    # @param [String] output directory to output documents, default: "data"
+    # @param [String] format output format, default: "yaml"
+    #
+    # @return [void]
+    #
     def self.fetch(output: "data", format: "yaml")
       t1 = Time.now
       puts "Started at: #{t1}"
@@ -31,18 +42,16 @@ module RelatonCalconnect
     #
     # fetch data form server and save it to file.
     #
-    def fetch
+    def fetch # rubocop:disable Metrics/AbcSize
       resp = Faraday.new(ENDPOINT, headers: { "If-None-Match" => etag }).get
       # return if there aren't any changes since last fetching
       return unless resp.status == 200
 
       data = YAML.safe_load resp.body
       all_success = true
-      data["root"]["items"].each do |doc|
-        success = parse_page doc
-        all_success &&= success
-      end
+      data["root"]["items"].each { |doc| all_success &&= parse_page doc }
       self.etag = resp[:etag] if all_success
+      @index.save
     end
 
     private
@@ -64,14 +73,20 @@ module RelatonCalconnect
       false
     end
 
-    def write_doc(docid, bib)
-      content = @format == "xml" ? bib.to_xml(bibdata: true) : bib.to_hash.to_yaml
-      file = File.join @output, "#{docid.upcase.gsub(%r{[/\s:]}, '_')}.#{@format}"
-      # if File.exist? file
-      #   warn "#{file} exist"
-      # else
+    def write_doc(docid, bib) # rubocop:disable Metrics/MethodLength
+      content = case @format
+                when "xml" then bib.to_xml(bibdata: true)
+                when "bibxml" then bib.to_bibxml
+                else bib.to_hash.to_yaml
+                end
+      file = File.join @output, "#{docid.upcase.gsub(%r{[/\s:]}, '_')}.#{@ext}"
+      if @files.include? file
+        warn "#{file} exist"
+      else
+        @files << file
+      end
+      @index.add_or_update docid, file
       File.write file, content, encoding: "UTF-8"
-      # end
     end
 
     #

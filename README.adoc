@@ -87,7 +87,7 @@ item.link
  #<RelatonBib::TypedUri:0x00007ff2d4b23a08 @content=#<Addressable::URI:0x6b8 URI:https://standards.calconnect.org/csd/cc-10005.rxl>, @type="rxl">]
 ----
 
-=== Get code, and year
+=== Get document by code, and year
 [source,ruby]
 ----
 RelatonCalconnect::CcBibliography.get "CC/DIR 10005", "2019", {}
@@ -119,13 +119,13 @@ RelatonCalconnect::CcBibliographicItem.from_hash hash
 
 === Fetch data
 
-This gem uses the https://raw.githubusercontent.com/usnistgov/NIST-Tech-Pubs/nist-pages/xml/allrecords.xml dataset as one of data sources.
+This gem uses the https://raw.githubusercontent.com/usnistgov/NIST-Tech-Pubs/nist-pages/xml/allrecords.xml dataset as one of the data sources.
 
-The method `RelatonCalconnect::DataFetcher.fetch(output: "data", format: "yaml")` fetches all the documents from the datast and save them to the `./data` folder in YAML format.
+The method `RelatonCalconnect::DataFetcher.fetch(output: "data", format: "yaml")` fetches all the documents from the dataset and saves them to the `./data` folder in YAML format.
 Arguments:
 
 - `output` - folder to save documents (default './data').
-- `format` - format in which the documents are saved. Possimle formats are: `yaml`, `xml` (default `yaml`).
+- `format` - the format in which the documents are saved. Possible formats are: `yaml`, `xml`, `bibxml` (default `yaml`).
 
 [source,ruby]
 ----

@@ -1,3 +1,4 @@
+require "relaton/index"
 require "relaton_bib"
 require "relaton_calconnect/version"
 require "relaton_calconnect/cc_bibliography"
