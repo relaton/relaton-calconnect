@@ -3,7 +3,7 @@ module RelatonCalconnect
     class << self
       # override RelatonBib::BibliographicItem.bib_item method
       # @param item_hash [Hash]
-      # @return [RelatonIsoBib::IsoBibliographicItem]
+      # @return [RelatonCalconnect::CcBibliographicItem]
       def bib_item(item_hash)
         CcBibliographicItem.new(**item_hash)
       end
