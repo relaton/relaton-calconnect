@@ -29,11 +29,11 @@ module RelatonCalconnect
           end
         end
 
-        warn "[relaton-calconnect] (\"#{ref}\") fetching..."
+        Util.warn "(#{ref}) fetching..."
         result = search(code, year, opts) || (return nil)
         ret = bib_results_filter(result, year)
         if ret[:ret]
-          warn "[relaton-calconnect] (\"#{ref}\") found #{ret[:ret].docidentifier.first.id}"
+          Util.warn "(#{ref}) found `#{ret[:ret].docidentifier.first.id}`"
           ret[:ret]
         else
           fetch_ref_err(code, year, ret[:years])
@@ -73,12 +73,12 @@ module RelatonCalconnect
       # @param year [String]
       # @param missed_years [Array<Strig>]
       def fetch_ref_err(code, year, missed_years)
-        id = year ? "#{code} year #{year}" : code
-        warn "[relaton-calconnect] WARNING: no match found online for #{id}. " \
-             "The code must be exactly like it is on the standards website."
+        id = year ? "`#{code}` year `#{year}`" : code
+        Util.warn "WARNING: no match found online for #{id}. " \
+                  "The code must be exactly like it is on the standards website."
         unless missed_years.empty?
-          warn "[relaton-calconnect] (There was no match for #{year}, though " \
-               "there were matches found for #{missed_years.join(', ')}.)"
+          Util.warn "(There was no match for `#{year}`, though there " \
+                    "were matches found for `#{missed_years.join('`, `')}`.)"
         end
         nil
       end
