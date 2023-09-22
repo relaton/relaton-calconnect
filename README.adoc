@@ -23,13 +23,24 @@ Or install it yourself as:
 
 == Usage
 
-=== Search for a standard using keywords
+=== Configuration
+
+Configuration is optional. The available option is `logger` which is a `Logger` instance. By default, the logger is `Logger.new($stderr)` with `Logger::WARN` level. To change the logger level, use `RelatonCalconnect.configure` block.
 
 [source,ruby]
 ----
 require 'relaton_calconnect'
 => true
 
+RelatonCalconnect.configure do |config|
+  config.logger.level = Logger::DEBUG
+end
+----
+
+=== Search for a standard using keywords
+
+[source,ruby]
+----
 hits = RelatonCalconnect::CcBibliography.search("CC/DIR 10005:2019")
 => <RelatonCalconnect::HitCollection:0x007f98e34a8bb0 @ref=CC/DIR 10005:2019 @fetched=false>
 
@@ -91,8 +102,8 @@ item.link
 [source,ruby]
 ----
 RelatonCalconnect::CcBibliography.get "CC/DIR 10005", "2019", {}
-[relaton-calconnect] ("CC/DIR 10005") fetching...
-[relaton-calconnect] ("CC/DIR 10005") found CC/DIR 10005:2019
+[relaton-calconnect] (CC/DIR 10005) fetching...
+[relaton-calconnect] (CC/DIR 10005) found `CC/DIR 10005:2019`
 => #<RelatonCalconnect::CcBibliographicItem:0x007f9a73dfa290
 ...
 ----
