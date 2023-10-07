@@ -81,7 +81,7 @@ RSpec.describe RelatonCalconnect do
         VCR.use_cassette "cc_dir_10005_2019", match_requests_on: [:path] do
           expect do
             RelatonCalconnect::CcBibliography.get "CC/DIR 10005", "2011"
-          end.to output(%r{no match found online for `CC/DIR 10005` year `2011`}).to_stderr
+          end.to output(/\[relaton-calconnect\] There was no match for `2011`, though there were matches found for `2019`\./).to_stderr
         end
       end
     end
@@ -90,7 +90,7 @@ RSpec.describe RelatonCalconnect do
       VCR.use_cassette "data", match_requests_on: [:path] do
         expect do
           RelatonCalconnect::CcBibliography.get "CC/DIR 123456"
-        end.to output(/no match found online for CC\/DIR 123456/).to_stderr
+        end.to output(/\[relaton-calconnect\] \(CC\/DIR 123456\) No found\./).to_stderr
       end
     end
   end

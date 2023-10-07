@@ -102,8 +102,8 @@ item.link
 [source,ruby]
 ----
 RelatonCalconnect::CcBibliography.get "CC/DIR 10005", "2019", {}
-[relaton-calconnect] (CC/DIR 10005) fetching...
-[relaton-calconnect] (CC/DIR 10005) found `CC/DIR 10005:2019`
+[relaton-calconnect] (CC/DIR 10005) Fetching from Relaton repository ...
+[relaton-calconnect] (CC/DIR 10005) Found: `CC/DIR 10005:2019`
 => #<RelatonCalconnect::CcBibliographicItem:0x007f9a73dfa290
 ...
 ----
