@@ -1,6 +1,6 @@
 ---
 id: CC/DIR10005-2019
-schema-version: v1.2.4
+schema-version: v1.2.5
 fetched: "2019-10-31"
 title:
 - type: title-main
@@ -63,6 +63,7 @@ copyright:
   from: '2019'
 editorialgroup:
 - name: PUBLISH
-doctype: directive
+doctype:
+  type: directive
 ext:
   schema-version: v1.0.0
