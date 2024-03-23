@@ -1,7 +1,6 @@
 require "relaton/index"
 require "relaton_bib"
 require "relaton_calconnect/version"
-require "relaton_calconnect/config"
 require "relaton_calconnect/util"
 require "relaton_calconnect/document_type"
 require "relaton_calconnect/cc_bibliography"

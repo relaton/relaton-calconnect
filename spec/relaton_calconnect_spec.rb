@@ -1,8 +1,6 @@
 require "jing"
 
 RSpec.describe RelatonCalconnect do
-  before { RelatonCalconnect.instance_variable_set :@configuration, nil }
-
   it "has a version number" do
     expect(RelatonCalconnect::VERSION).not_to be nil
   end
@@ -81,7 +79,9 @@ RSpec.describe RelatonCalconnect do
         VCR.use_cassette "cc_dir_10005_2019", match_requests_on: [:path] do
           expect do
             RelatonCalconnect::CcBibliography.get "CC/DIR 10005", "2011"
-          end.to output(/\[relaton-calconnect\] There was no match for `2011`, though there were matches found for `2019`\./).to_stderr
+          end.to output(
+            /\[relaton-calconnect\] INFO: There was no match for `2011`, though there were matches found for `2019`\./
+          ).to_stderr_from_any_process
         end
       end
     end
@@ -90,7 +90,7 @@ RSpec.describe RelatonCalconnect do
       VCR.use_cassette "data", match_requests_on: [:path] do
         expect do
           RelatonCalconnect::CcBibliography.get "CC/DIR 123456"
-        end.to output(/\[relaton-calconnect\] \(CC\/DIR 123456\) No found\./).to_stderr
+        end.to output(/\[relaton-calconnect\] INFO: \(CC\/DIR 123456\) No found\./).to_stderr_from_any_process
       end
     end
   end

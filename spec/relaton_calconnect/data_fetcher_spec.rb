@@ -47,7 +47,7 @@ RSpec.describe RelatonCalconnect::DataFetcher do
 
       it "log error" do
         expect(RelatonCalconnect::Scrapper).to receive(:parse_page).and_raise StandardError
-        expect { subject.send(:parse_page, { "docid" => { "id" => "1234" } }) }.to output(/Document: 1234/).to_stderr
+        expect { subject.send(:parse_page, { "docid" => { "id" => "1234" } }) }.to output(/Document: 1234/).to_stderr_from_any_process
       end
     end
 
@@ -70,7 +70,7 @@ RSpec.describe RelatonCalconnect::DataFetcher do
 
         it "warn if file exist" do
           files << "data/1234.yaml"
-          expect { subject.send(:write_doc, "1234", bib) }.to output(/exist/).to_stderr
+          expect { subject.send(:write_doc, "1234", bib) }.to output(/exist/).to_stderr_from_any_process
         end
       end
 
