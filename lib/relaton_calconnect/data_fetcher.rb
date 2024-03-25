@@ -67,9 +67,9 @@ module RelatonCalconnect
       write_doc doc["docid"]["id"], bib
       true
     rescue StandardError => e
-      warn "Document: #{doc['docid']['id']}"
-      warn e.message
-      warn e.backtrace[0..5].join("\n")
+      Util.warn "Document: #{doc['docid']['id']}"
+      Util.warn e.message
+      Util.warn e.backtrace[0..5].join("\n")
       false
     end
 
@@ -81,7 +81,7 @@ module RelatonCalconnect
                 end
       file = File.join @output, "#{docid.upcase.gsub(%r{[/\s:]}, '_')}.#{@ext}"
       if @files.include? file
-        warn "#{file} exist"
+        Util.warn "#{file} exist"
       else
         @files << file
       end

@@ -1,9 +1,6 @@
 module RelatonCalconnect
   module Util
     extend RelatonBib::Util
-
-    def self.logger
-      RelatonCalconnect.configuration.logger
-    end
+    PROGNAME = "relaton-calconnect".freeze
   end
 end
