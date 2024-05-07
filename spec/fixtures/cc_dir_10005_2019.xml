@@ -1,6 +1,6 @@
-<bibdata type="standard" schema-version="v1.2.8">
+<bibdata type="standard" schema-version="v1.3.0">
   <fetched>2022-11-23</fetched>
-  <title format="text/plain" language="en">Guidelines for the implementation of the CalConnect patent policy</title>
+  <title language="en">Guidelines for the implementation of the CalConnect patent policy</title>
   <uri type="xml">https://standards.calconnect.org/csd/cc-10005.xml</uri>
   <uri type="pdf">https://standards.calconnect.org/csd/cc-10005.pdf</uri>
   <uri type="doc">https://standards.calconnect.org/csd/cc-10005.doc</uri>

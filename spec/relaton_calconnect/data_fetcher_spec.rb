@@ -58,7 +58,7 @@ RSpec.describe RelatonCalconnect::DataFetcher do
         before do
           hash = double "hash"
           expect(hash).to receive(:to_yaml).and_return :yaml
-          expect(bib).to receive(:to_hash).and_return hash
+          expect(bib).to receive(:to_h).and_return hash
           expect(index).to receive(:add_or_update).with("1234", "data/1234.yaml")
           expect(File).to receive(:write).with("data/1234.yaml", :yaml, encoding: "UTF-8")
         end

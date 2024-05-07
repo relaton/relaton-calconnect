@@ -77,7 +77,7 @@ module RelatonCalconnect
       content = case @format
                 when "xml" then bib.to_xml(bibdata: true)
                 when "bibxml" then bib.to_bibxml
-                else bib.to_hash.to_yaml
+                else bib.to_h.to_yaml
                 end
       file = File.join @output, "#{docid.upcase.gsub(%r{[/\s:]}, '_')}.#{@ext}"
       if @files.include? file

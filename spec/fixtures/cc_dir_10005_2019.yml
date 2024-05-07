@@ -1,18 +1,16 @@
 ---
 id: CC/DIR10005-2019
-schema-version: v1.2.8
+schema-version: v1.3.0
 fetched: "2019-10-31"
 title:
 - type: title-main
   content: Guidelines for the implementation of the CalConnect patent policy
   language:
   - en
-  format: text/plain
 - type: main
   content: Guidelines for the implementation of the CalConnect patent policy
   language:
   - en
-  format: text/plain
 link:
 - type: xml
   content: csd/cc-10005.xml
@@ -58,8 +56,9 @@ docstatus:
     value: published
 copyright:
 - owner:
-  - name:
-    - content: CalConnect
+  - organization:
+      name:
+      - content: CalConnect
   from: '2019'
 editorialgroup:
 - name: PUBLISH
