@@ -23,24 +23,13 @@ Or install it yourself as:
 
 == Usage
 
-=== Configuration
-
-Configuration is optional. The available option is `logger` which is a `Logger` instance. By default, the logger is `Logger.new($stderr)` with `Logger::WARN` level. To change the logger level, use `RelatonCalconnect.configure` block.
+=== Search for a standard using keywords
 
 [source,ruby]
 ----
 require 'relaton_calconnect'
 => true
 
-RelatonCalconnect.configure do |config|
-  config.logger.level = Logger::DEBUG
-end
-----
-
-=== Search for a standard using keywords
-
-[source,ruby]
-----
 hits = RelatonCalconnect::CcBibliography.search("CC/DIR 10005:2019")
 => <RelatonCalconnect::HitCollection:0x007f98e34a8bb0 @ref=CC/DIR 10005:2019 @fetched=false>
 
@@ -146,6 +135,10 @@ Stopped at: 2021-09-09 16:04:12 +0200
 Done in: 20 sec.
 => nil
 ----
+
+=== Logging
+
+RelatonCalconnect uses the relaton-logger gem for logging. By default, it logs to STDOUT. To change the log levels and add other loggers, read the https://github.com/relaton/relaton-logger#usage[relaton-logger] documentation.
 
 == Development
 
