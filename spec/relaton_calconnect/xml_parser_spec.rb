@@ -25,4 +25,12 @@ RSpec.describe RelatonCalconnect::XMLParser do
       expect(eg.technical_committee[1].workgroup.number).to eq 1
     end
   end
+
+  it "create_doctype" do
+    elm = Nokogiri::XML("<doctype abbreviation='GD'>guide</tdocype>").root
+    dt = described_class.send :create_doctype, elm
+    expect(dt).to be_instance_of RelatonCalconnect::DocumentType
+    expect(dt.type).to eq "guide"
+    expect(dt.abbreviation).to eq "GD"
+  end
 end
