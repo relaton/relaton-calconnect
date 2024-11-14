@@ -55,11 +55,16 @@ module RelatonCalconnect
       #
       # @return [Hash]
       def bib_results_filter(result, year)
-        missed_years = []
+        missed_years = Set.new
         result.each do |r|
           item = r.fetch
           item.fetched = Date.today.to_s
           return { ret: item } if !year
+
+          /:(?<id_year>\d{4})$/ =~ r.hit[:id]
+          return { ret: item } if year.to_i == id_year.to_i
+
+          missed_years << id_year.to_i if id_year
 
           item.date.select { |d| d.type == "published" }.each do |d|
             return { ret: item } if year.to_i == d.on(:year)

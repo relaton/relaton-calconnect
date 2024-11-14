@@ -74,8 +74,15 @@ module RelatonCalconnect
         dtps = %w[CC CSD]
         did = array(doc["docid"]).detect { |id| dtps.include? id["type"].upcase }
         did["primary"] = true if did
+        # date_to_hash doc
         doc
       end
+
+      # def date_to_hash(doc)
+      #   return if doc["date"] || !doc["revdate"]
+
+      #   doc["date"] = { "type" => "published", "on" => doc["revdate"] }
+      # end
 
       def update_links(bib, links)
         links.each do |l|
