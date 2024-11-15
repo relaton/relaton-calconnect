@@ -43,17 +43,17 @@ http_interactions:
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 15 Nov 2024 02:05:24 GMT
+      - Fri, 15 Nov 2024 01:50:44 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-iad-kjyo7100102-IAD
+      - cache-iad-kjyo7100123-IAD
       X-Cache:
-      - HIT
+      - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1731636324.242197,VS0,VE119
+      - S1731635444.426888,VS0,VE84
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -61,9 +61,9 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 564956fde9ddfff5ae38d872951fc9cfc4fcd7b1
+      - bd21ea83e655b76b664697fc8390fe3ceb7e04cc
       Expires:
-      - Fri, 15 Nov 2024 02:10:24 GMT
+      - Fri, 15 Nov 2024 01:55:44 GMT
       Source-Age:
       - '0'
     body:
@@ -106,101 +106,5 @@ http_interactions:
         v0P93/v7P1BLAQIeAxQAAAAIAPtwJ1hKI92FugUAALwsAAANABgAAAAAAAEA
         AACkgQAAAABpbmRleC12MS55YW1sVVQFAAM6sJpldXgLAAEE6QMAAAR/AAAA
         UEsFBgAAAAABAAEAUwAAAAEGAAAAAA==
-  recorded_at: Fri, 15 Nov 2024 02:05:24 GMT
-- request:
-    method: get
-    uri: https://raw.githubusercontent.com/relaton/relaton-data-calconnect/main/data/CC_DIR_10005_2019.yaml
-    body:
-      encoding: US-ASCII
-      base64_string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.7.12
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '1170'
-      Cache-Control:
-      - max-age=300
-      Content-Security-Policy:
-      - default-src 'none'; style-src 'unsafe-inline'; sandbox
-      Content-Type:
-      - text/plain; charset=utf-8
-      Etag:
-      - W/"91e7ef1fca4477bf95c7844956cc8a3996642cac588a7b7ec638e51e21626a0a"
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - deny
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Github-Request-Id:
-      - 0D27:2588BE:439184:49CB16:6736AC62
-      Accept-Ranges:
-      - bytes
-      Date:
-      - Fri, 15 Nov 2024 02:05:25 GMT
-      Via:
-      - 1.1 varnish
-      X-Served-By:
-      - cache-iad-kjyo7100096-IAD
-      X-Cache:
-      - MISS
-      X-Cache-Hits:
-      - '0'
-      X-Timer:
-      - S1731636325.506227,VS0,VE1095
-      Vary:
-      - Authorization,Accept-Encoding,Origin
-      Access-Control-Allow-Origin:
-      - "*"
-      Cross-Origin-Resource-Policy:
-      - cross-origin
-      X-Fastly-Request-Id:
-      - 5293a34e6931b9fd6280f1d4b2258059f32d4124
-      Expires:
-      - Fri, 15 Nov 2024 02:10:25 GMT
-      Source-Age:
-      - '0'
-    body:
-      encoding: ASCII-8BIT
-      base64_string: |
-        LS0tCnNjaGVtYS12ZXJzaW9uOiB2MS4yLjgKaWQ6IENDLURJUjEwMDA1LTIw
-        MTkKdGl0bGU6Ci0gY29udGVudDogR3VpZGVsaW5lcyBmb3IgdGhlIGltcGxl
-        bWVudGF0aW9uIG9mIHRoZSBDYWxDb25uZWN0IHBhdGVudCBwb2xpY3kKICBs
-        YW5ndWFnZToKICAtIGVuCiAgZm9ybWF0OiB0ZXh0L3BsYWluCmxpbms6Ci0g
-        Y29udGVudDogaHR0cHM6Ly9zdGFuZGFyZHMuY2FsY29ubmVjdC5vcmcvY3Nk
-        L2NjLTEwMDA1LnhtbAogIHR5cGU6IHhtbAotIGNvbnRlbnQ6IGh0dHBzOi8v
-        c3RhbmRhcmRzLmNhbGNvbm5lY3Qub3JnL2NzZC9jYy0xMDAwNS5wZGYKICB0
-        eXBlOiBwZGYKLSBjb250ZW50OiBodHRwczovL3N0YW5kYXJkcy5jYWxjb25u
-        ZWN0Lm9yZy9jc2QvY2MtMTAwMDUuZG9jCiAgdHlwZTogZG9jCi0gY29udGVu
-        dDogaHR0cHM6Ly9zdGFuZGFyZHMuY2FsY29ubmVjdC5vcmcvY3NkL2NjLTEw
-        MDA1Lmh0bWwKICB0eXBlOiBodG1sCi0gY29udGVudDogaHR0cHM6Ly9zdGFu
-        ZGFyZHMuY2FsY29ubmVjdC5vcmcvY3NkL2NjLTEwMDA1LnJ4bAogIHR5cGU6
-        IHJ4bAp0eXBlOiBzdGFuZGFyZApkb2NpZDoKLSBpZDogQ0MvRElSIDEwMDA1
-        OjIwMTkKICB0eXBlOiBjc2QKICBwcmltYXJ5OiB0cnVlCmRvY251bWJlcjog
-        JzEwMDA1JwpkYXRlOgotIHR5cGU6IHB1Ymxpc2hlZAogIHZhbHVlOiAnMjAx
-        OS0wNi0xMycKY29udHJpYnV0b3I6Ci0gb3JnYW5pemF0aW9uOgogICAgbmFt
-        ZToKICAgIC0gY29udGVudDogQ2FsQ29ubmVjdAogIHJvbGU6CiAgLSB0eXBl
-        OiBhdXRob3IKLSBvcmdhbml6YXRpb246CiAgICBuYW1lOgogICAgLSBjb250
-        ZW50OiBDYWxDb25uZWN0CiAgcm9sZToKICAtIHR5cGU6IHB1Ymxpc2hlcgpl
-        ZGl0aW9uOgogIGNvbnRlbnQ6ICcxJwp2ZXJzaW9uOgotIHJldmlzaW9uX2Rh
-        dGU6ICcyMDE5LTA2LTEzJwpyZXZkYXRlOiAnMjAxOS0wNi0xMycKbGFuZ3Vh
-        Z2U6Ci0gZW4Kc2NyaXB0OgotIExhdG4KZG9jc3RhdHVzOgogIHN0YWdlOgog
-        ICAgdmFsdWU6IHB1Ymxpc2hlZApjb3B5cmlnaHQ6Ci0gb3duZXI6CiAgLSBu
-        YW1lOgogICAgLSBjb250ZW50OiBDYWxDb25uZWN0CiAgZnJvbTogJzIwMTkn
-        CmRvY3R5cGU6CiAgdHlwZTogZGlyZWN0aXZlCmVkaXRvcmlhbGdyb3VwOgot
-        IG5hbWU6IFBVQkxJU0gKZXh0OgogIHNjaGVtYS12ZXJzaW9uOiB2MS4wLjAK
-  recorded_at: Fri, 15 Nov 2024 02:05:25 GMT
+  recorded_at: Fri, 15 Nov 2024 01:50:44 GMT
 recorded_with: VCR 6.3.1

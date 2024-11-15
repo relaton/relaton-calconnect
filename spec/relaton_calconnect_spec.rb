@@ -12,6 +12,12 @@ RSpec.describe RelatonCalconnect do
   end
 
   context "search" do
+    before do
+      # Force to download index file
+      allow_any_instance_of(Relaton::Index::Type).to receive(:actual?).and_return(false)
+      allow_any_instance_of(Relaton::Index::FileIO).to receive(:check_file).and_return(nil)
+    end
+
     it "hits" do
       VCR.use_cassette "cc_dir_10005_2019", match_requests_on: [:path] do
         hc = RelatonCalconnect::CcBibliography.search("CC/DIR 10005:2019")
