@@ -5,9 +5,10 @@ module RelatonCalconnect
 
     # @param ret [Hash]
     def editorialgroup_hash_to_bib(ret)
-      return unless ret[:editorialgroup]
+      eg = ret.dig(:ext, :editorialgroup) || ret[:editorialgroup] # @TODO remove ret[:editorialgroup] after update all datasets
+      return unless eg
 
-      technical_committee = RelatonBib.array(ret[:editorialgroup]).map do |wg|
+      technical_committee = RelatonBib.array(eg).map do |wg|
         TechnicalCommittee.new RelatonBib::WorkGroup.new(**wg)
       end
       ret[:editorialgroup] = RelatonBib::EditorialGroup.new technical_committee

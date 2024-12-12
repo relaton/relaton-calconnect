@@ -61,9 +61,9 @@ copyright:
   - name:
     - content: CalConnect
   from: '2019'
-editorialgroup:
-- name: PUBLISH
-doctype:
-  type: directive
 ext:
   schema-version: v1.0.0
+  editorialgroup:
+  - name: PUBLISH
+  doctype:
+    type: directive
