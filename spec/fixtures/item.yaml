@@ -1,0 +1,73 @@
+---
+id: CCDIR100052019
+schema_version: v1.2.9
+fetched: "2019-10-31"
+title:
+- type: title-main
+  content: Guidelines for the implementation of the CalConnect patent policy
+  language: en
+- type: main
+  content: Guidelines for the implementation of the CalConnect patent policy
+  language: en
+source:
+- type: xml
+  content: csd/cc-10005.xml
+- type: pdf
+  content: csd/cc-10005.pdf
+- type: doc
+  content: csd/cc-10005.doc
+- type: html
+  content: csd/cc-10005.html
+- type: rxl
+  content: csd/cc-10005.rxl
+type: standard
+docidentifier:
+- content: CC/DIR 10005:2019
+  type: CC
+  primary: true
+docnumber: '10005'
+date:
+- type: published
+  at: '2019-01-01'
+contributor:
+- organization:
+    name:
+    - content: CalConnect
+  role:
+  - type: author
+- organization:
+    name:
+    - content: CalConnect
+  role:
+  - type: publisher
+edition:
+  content: '1'
+version:
+  - revision_date: '2019-06-05'
+language:
+- en
+script:
+- Latn
+status:
+  stage:
+    content: published
+copyright:
+- owner:
+  - organization:
+      name:
+      - content: CalConnect
+  from: '2019'
+ext:
+  schema_version: v1.0.0
+  doctype:
+    abbreviation: DIR
+    content: directive
+  subdoctype: Implementation Guidelines
+  flavor: callconnect
+  editorialgroup:
+    committee:
+      - type: TC
+        content: TC 1
+  ics:
+    - code: "35"
+      text: Information technology. Office machines
