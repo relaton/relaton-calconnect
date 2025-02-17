@@ -1,0 +1,44 @@
+<bibitem id="CCDIR100052019" type="standard" schema-version="v1.2.9">
+  <fetched>2019-10-31</fetched>
+  <title language="en" type="title-main">Guidelines for the implementation of the CalConnect patent policy</title>
+  <title language="en" type="main">Guidelines for the implementation of the CalConnect patent policy</title>
+  <uri type="xml">csd/cc-10005.xml</uri>
+  <uri type="pdf">csd/cc-10005.pdf</uri>
+  <uri type="doc">csd/cc-10005.doc</uri>
+  <uri type="html">csd/cc-10005.html</uri>
+  <uri type="rxl">csd/cc-10005.rxl</uri>
+  <docidentifier type="CC" primary="true">CC/DIR 10005:2019</docidentifier>
+  <docnumber>10005</docnumber>
+  <date type="published">
+    <on>2019-01-01</on>
+  </date>
+  <contributor>
+    <role type="author"/>
+    <organization>
+      <name>CalConnect</name>
+    </organization>
+  </contributor>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>CalConnect</name>
+    </organization>
+  </contributor>
+  <edition>1</edition>
+  <version>
+    <revision-date>2019-06-05</revision-date>
+  </version>
+  <language>en</language>
+  <script>Latn</script>
+  <status>
+    <stage>published</stage>
+  </status>
+  <copyright>
+    <from>2019</from>
+    <owner>
+      <organization>
+        <name>CalConnect</name>
+      </organization>
+    </owner>
+  </copyright>
+</bibitem>

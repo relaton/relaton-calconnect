@@ -1,17 +1,17 @@
 lib = File.expand_path("lib", __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "relaton_calconnect/version"
+require "relaton/calconnect/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "relaton-calconnect"
-  spec.version       = RelatonCalconnect::VERSION
+  spec.version       = Relaton::Calconnect::VERSION
   spec.authors       = ["Ribose Inc."]
   spec.email         = ["open.source@ribose.com"]
 
-  spec.summary       = "RelatonIso: retrieve CC Standards for bibliographic " \
-                       "use using the IsoBibliographicItem model"
-  spec.description   = "RelatonIso: retrieve CC Standards for bibliographic " \
-                       "use using the IsoBibliographicItem model"
+  spec.summary       = "Relaton::Calconnect: retrieve CC Standards for bibliographic " \
+                       "use using the BibliographicItem model"
+  spec.description   = "Relaton::Calconnect: retrieve CC Standards for bibliographic " \
+                       "use using the BibliographicItem model"
 
   spec.homepage      = "https://github.com/relaton/relaton-calconnect"
   spec.license       = "BSD-2-Clause"
@@ -27,6 +27,6 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = Gem::Requirement.new(">= 2.7.0")
 
   spec.add_dependency "faraday", "~> 2.7.0"
-  spec.add_dependency "relaton-bib", "~> 1.20.0"
+  spec.add_dependency "relaton-bib", "~> 2.0.0-alpha.1"
   spec.add_dependency "relaton-index", "~> 0.2.0"
 end
