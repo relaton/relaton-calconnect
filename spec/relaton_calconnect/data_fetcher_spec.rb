@@ -42,7 +42,7 @@ RSpec.describe RelatonCalconnect::DataFetcher do
       it do
         expect(RelatonCalconnect::Scrapper).to receive(:parse_page).with(kind_of(Hash)).and_return :bib
         expect(subject).to receive(:write_doc).with("1234", :bib)
-        expect(subject.send(:parse_page, { "docid" => { "id" => "1234" } })).to be true
+        expect(subject.send(:parse_page, { "docid" => [{ "id" => "1234" }] })).to be true
       end
 
       it "log error" do

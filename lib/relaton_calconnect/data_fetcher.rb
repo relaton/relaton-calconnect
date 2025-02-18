@@ -64,7 +64,7 @@ module RelatonCalconnect
     def parse_page(doc)
       bib = Scrapper.parse_page doc
       # bib.link.each { |l| l.content.merge!(scheme: SCHEME, host: HOST) unless l.content.host }
-      write_doc doc["docid"]["id"], bib
+      write_doc doc["docid"][0]["id"], bib
       true
     rescue StandardError => e
       Util.warn "Document: #{doc['docid']['id']}"
