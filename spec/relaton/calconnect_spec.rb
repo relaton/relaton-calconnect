@@ -39,12 +39,10 @@ RSpec.describe Relaton::Calconnect do
 
   context "gets" do
     it "reference" do
-      VCR.use_cassette "data", match_requests_on: [:path] do
-        VCR.use_cassette "cc_dir_10005_2019", match_requests_on: [:path] do
-          item = Relaton::Calconnect::Bibliography.get "CC/DIR 10005"
-          expect(item).to be_instance_of Relaton::Calconnect::ItemData
-          expect(item.docidentifier.first.content).to eq "CC/DIR 10005:2019"
-        end
+      VCR.use_cassette "cc_dir_10005_2019", match_requests_on: [:path] do
+        item = Relaton::Calconnect::Bibliography.get "CC/DIR 10005"
+        expect(item).to be_instance_of Relaton::Calconnect::ItemData
+        expect(item.docidentifier.first.content).to eq "CC/DIR 10005:2019"
       end
     end
 
@@ -92,11 +90,6 @@ RSpec.describe Relaton::Calconnect do
           Relaton::Calconnect::Bibliography.get "CC/DIR 123456"
         end.to output(/\[relaton-calconnect\] INFO: \(CC\/DIR 123456\) Not found\./).to_stderr_from_any_process
       end
-    end
-
-    xit "CC/R 1102:2013", vcr: "cc_r_1102_2013" do
-      item = Relaton::Calconnect::Bibliography.get "CC/R 1102:2013"
-      expect(item.docidentifier.first.id).to eq "CC/R 1102:2013"
     end
   end
 end

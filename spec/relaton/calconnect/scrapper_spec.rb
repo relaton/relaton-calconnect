@@ -120,12 +120,12 @@ describe Relaton::Calconnect::Scraper do
             "affiliation" => [
               {
                 "organization" => {
-                  "address" => {
+                  "address" => [{
                     "street" => ["1 Infinite Loop"],
                     "city" => "Cupertino",
                     "country" => "USA",
                     "postcode" => "95014"
-                  },
+                  }],
                   "name" => [{ "content" => "Apple Inc." }]
                 }
               }
