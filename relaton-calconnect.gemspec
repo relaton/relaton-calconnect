@@ -31,5 +31,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "relaton-core", "~> 0.0.12"
   spec.add_dependency "addressable", "~> 2.8"
   spec.add_dependency "relaton-index", "~> 0.2.0"
-  spec.add_dependency "rubyzip", "~> 2.3"
+  spec.add_dependency "rubyzip", ">= 2.3", "< 4"
 end
